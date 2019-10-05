@@ -1,0 +1,29 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: url('../img/animal.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+nav{
+	height: 25px;
+	font-size: 16pt;
+	
+}
+a#imagem{
+	height: 60px;
+	margin-top: -10px;
+	
+}
+.login{
+	border: 0px solid #fff; 
+	padding: 35px 100px; 
+-webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+
+} 
+.ul{
+	height:40px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+    <head>
+        <title>Física Já</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/estilo.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="menu">
+  			<!-- Brand/logo -->
+  			<a class="navbar-brand" href="#">
+    			<img src="img/logo.png" alt="logo" style="width:40px;">
+  			</a>
+  
+  			<!-- Links -->
+  			<ul class="navbar-nav">
+    			<li class="nav-item">
+      				<a class="nav-link" href="index.html">Início</a>
+    			</li>
+				<li class="nav-item">
+      				<a class="nav-link" href="criadores.html">Criadores</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link" href="login.php">Entrar</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link" href="Cadastro.php">Cadastrar</a>
+    			</li>
+				
+  			</ul>
+		</nav>
+		
+		<br/><br/><br/>
+		
+		<div class="container-fluid col-12 col-sm-12 col-md-10 col-xl-10 p-2 mt-2">
+			<center>
+				
+				<form id="login" name="formteste" method="POST" action="cadastroInsert.php" class="p-2 mt-2">
+					<br/>
+					<strong><h4 class="mt-2"> Preencha todos os campos abaixo: </h4></strong><br/>
+					<p><input type="text" name="nomeU" placeholder="Informe seu nome..." required="required"/></p><br/>
+					<p><input type="text" name="sobrenomeU" placeholder="Informe seu nome sobrenome..." required="required"/></p><br/>
+					<p><input type="email" name="emailU" placeholder="Informe um e-mail..."required="required"/></p><br/>
+					<p><input type="password" name="senhaU" placeholder="Informe uma senha..."required="required"/></p><br/>
+					<input type="submit" class="btn btn-outline-secondary" value="Cadastrar">
+				</form>
+					
+			</center>
+		</div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="jquery/dist/jquery.js"></script>
+        <script src="popper.js/dist/popper.js"></script>
+        <script src="js/bootstrap.js"></script>
+        
+    </body>
+</html>
