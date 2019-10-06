@@ -1,80 +1,97 @@
-
 body {
-
-	margin: 0;
-	padding: 0;
-	font-family: Bradley Hand, cursive;
-	/*background-image: url('../img/fundo_alta_qualidade2.jpg');*/
-	background-color: #264052;
-	/* to left: significa que o background vai começar da esquerda pra direita, tipo, dessa cor
-	pra ir mudando pra segunda, da esquerda pra direita, ou ao contrario, mas emfim, vamos resolver o botao */
-	/*background-image: linear-gradient(to left,  #357bbd, #fff);*/
-	/* background-repeat: no-repeat;*/
-}
-nav{
-	/*height: 70px;*/
-}
-form{
-	border-radius: 10px;
-	font-size: 16px;
-	background-color: #DCDCDC;
-	max-width: 500px;
-	margin: 0 auto;
-	padding: 0px 10px 10px 10px;
-}
-#texto{
-	border-radius: 35px 35px 35px 35px;
-	background-color: #F8F8FF;
-}
-h2{
-	color: white;
-	box-shadow: 15px 10px 10px grey;
-	text-shadow: 3px 3px 5px #A4A4A4;
-	border-radius: 15px 15px 15px 15px;
-	border: 1px solid grey;
-	text-align: center;
-	font-family: Bradley Hand, cursive;
-	background-color: #264052;
-}
-h4{
-	text-shadow: 1px 5px 8px white;
-	text-align: justify-all;
-	color: #5F9EA0;
-	font-size: 20pt;
-}
-h4, p{
-	font-family: Bradley Hand, cursive;
-	
-}
-input{
-	width: 450px;
-	padding: 10px;
-	border-radius: 3px;
-	border: 1px #363636;
-}
-button{
-	width: 150px;
-	height: 40px;
-}
-#login{
-	box-shadow: 15px 10px 10px gray;
-	
-}
-#menu{
-	opacity: 0.8;
-	text-transform: uppercase;
-	font-size: 16pt
-}
-li:hover{
-	box-shadow: 0px 0px 0px #F8F8FF;
-	background-color: #696969;
-	color: white;
-	text-shadow: 2px 2px 5px white;
-	border-radius: 10px 10px 10px 10px;
-}
-footer{
-	border-radius: 10px 10px 0px 0px;
-	color: white;
-	background-color: #1e211f;
+    margin: 0;
+    padding: 0;
+    font-family: Bradley Hand, cursive;
+    /*background-image: url('../img/fundo_alta_qualidade2.jpg');*/
+    background-color: #264052;
+    /* to left: significa que o background vai começar da esquerda pra direita, tipo, dessa cor
+	pra ir mudando pra segunda, da esquerda pra direita, ou ao contrario */
+    /*background-image: linear-gradient(to left,  #357bbd, #fff);*/
+    /* background-repeat: no-repeat;*/
 }
 
+nav {
+    /*height: 70px;*/
+}
+
+form {
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #DCDCDC;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0px 10px 10px 10px;
+}
+
+#texto {
+    border-radius: 35px 35px 35px 35px;
+    background-color: #F8F8FF;
+}
+
+#aviso {
+    text-shadow: 1px 5px 8px white;
+    text-align: justify-all;
+    color: #264052;
+    font-size: 20pt;
+}
+
+p {
+    font-family: Bradley Hand, cursive;
+}
+
+input {
+    width: 450px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px #363636;
+}
+
+button {
+    width: 150px;
+    height: 40px;
+}
+
+#h2formulas {
+    color: white;
+    /*text-shadow: 3px 3px 5px #A4A4A4;*/
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid grey;
+    text-align: center;
+    font-family: Bradley Hand, cursive;
+    background-color: #4d7887;
+}
+
+#divs {
+    border-radius: 15px 15px 15px 15px;
+    background-color: #F8F8FF;
+}
+
+#menu {
+    text-transform: uppercase;
+    font-size: 16pt
+}
+
+li:hover {
+    box-shadow: 0px 0px 0px #F8F8FF;
+    background-color: #696969;
+    color: white;
+    text-shadow: 2px 2px 5px white;
+    border-radius: 10px 10px 10px 10px;
+}
+
+footer {
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    background-color: #1e211f;
+}
+
+#vermais {
+    text-decoration: none;
+    color: white;
+    background-color: #4d7887;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+
+#vermais:hover {
+    box-shadow: 0px 0px 0px 0px #363636;
+}

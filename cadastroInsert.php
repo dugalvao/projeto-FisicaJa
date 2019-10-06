@@ -22,10 +22,9 @@
 		$result = mysqli_fetch_array($result); //s? essa linha? 
 		/*$_SESSION['id_user'] = mysqli_fetch_assoc($result['id_usuario']);
 		$_SESSION['name_usuario'] = mysqli_fetch_assoc($result['nome_usuario']);*/
-		//acho que se mandar direto sem o fetch assoc ali da, nao da ? a gente tenta
+
 		$_SESSION['id_user'] = $result['id_usuario'];
-		$_SESSION['nome_usuario'] = $result['nome_usuario'];
-		//print_r($result);
+		$_SESSION['name_user'] = $result['nome_usuario'];
 		
 	}
 	

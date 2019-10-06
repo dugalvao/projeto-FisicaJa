@@ -20,11 +20,12 @@
 				header("Location: login.php");
 			}elseif(isset($resultado)){
 				//se resultado for diferente de vazio
-				setcookie("pega_id",$resultado['id_usuario']);
+				//setcookie("pega_id",$resultado['id_usuario']);
 				//esse código serve para pegar cookie 
 				$_SESSION['id_user'] = $resultado['id_usuario'];
 				$_SESSION['name_user'] = $resultado['nome_usuario'];
- 				header("Location: perfil.php?id=$resultado[id_usuario]");
+				// header("Location: perfil.php?id=$resultado[id_usuario]");
+				header("Location: listagem.php");
 			
 			}else{
 				$_SESSION['loginErro'] = 'Usuário ou senha inválido.'; 
