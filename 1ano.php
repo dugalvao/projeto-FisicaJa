@@ -42,7 +42,7 @@ session_start();
 						//$selectnome = mysqli_query($conectar, "select nome_usuario from usuario where id_usuario='$id'");
 						//$resultado = mysqli_fetch_array($selectnome);
 						//echo "Olá, " .$resultado["nome_usuario"];
-						echo "Olá, " .$_SESSION['name_user'];
+						echo "Olá, " . $_SESSION['name_user'];
 					?>
       				</a>
       				<div class="dropdown-menu">
