@@ -24,6 +24,8 @@
 				//esse código serve para pegar cookie 
 				$_SESSION['id_user'] = $resultado['id_usuario'];
 				$_SESSION['name_user'] = $resultado['nome_usuario'];
+				$_SESSION['sobrenome_user'] = $resultado['sobrenome_usuario'];
+				$_SESSION['email_user'] = $resultado ['email_usuario'];
 				// header("Location: perfil.php?id=$resultado[id_usuario]");
 				header("Location: listagem.php");
 			

@@ -7,10 +7,14 @@
     <head>
         <title>Fórmulas</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+		<meta name="viewport" content="width=device-width, user-scalable=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/estilo.css">
+		<link rel="stylesheet" href="css/estilo.css">
+		<script src="jquery/dist/jquery.js"></script>
+        <script src="popper.js/dist/popper.js"></script>
+        <script src="js/bootstrap.js"></script>
     </head>
     <body>
 	<div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
@@ -67,7 +71,7 @@
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10  p-3 mt-3" id="divs">
 		<h2 class="p-3 mt-3" id="h2formulas">Força eletrostática (Lei de Coulomb)</h2>
 			<center>
-			<h1 class="p-3 mt-3">F = (K . (|Q1| . |Q2|)) / D²</h1>
+			<h1 class="p-3 mt-3" id="textoCentro">F = (K . (|Q1| . |Q2|)) / D²</h1>
 			</center>
 			<a href="#" id="vermais"  class="btn btn-lg btn-block w-100 ">
 				Ver mais
@@ -93,9 +97,7 @@
 		</div><br/>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="jquery/dist/jquery.js"></script>
-        <script src="popper.js/dist/popper.js"></script>
-        <script src="js/bootstrap.js"></script>
+        
         
     </body>
 </html>
