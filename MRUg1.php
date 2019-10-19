@@ -3,13 +3,14 @@
 	include("conexao.php");
 	$id_usuario = $_SESSION['id_user'];
 	
+
 	$valor1 = $_GET['valor1'];
 	$valor2 = $_GET['valor2'];
 	$valor3 = $_GET['valor3'];
 	$resultado = $valor1 + ($valor2 * $valor3);
 	
-	$conexaosql = mysqli_query($conectar, "INSERT INTO formula(tipo_formula, id_usuario, valor1, valor2, valor3, valor4, valor5)
-	VALUES ('MRUg1','$id_usuario','$valor1', '$valor2', '$valor3', '', '')");
+	// $conexaosql = mysqli_query($conectar, "INSERT INTO formula(tipo_formula, id_usuario, valor1, valor2, valor3, valor4, valor5)
+	// VALUES ('MRU','$id_usuario','$valor1', '$valor2', '$valor3', '', '')");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -65,7 +66,11 @@
 			<h3><?php echo "S = $resultado m";?></h3>
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					<center><button type="submit" class="btn btn-lg">Salvar</button></center>
+					<center><button type="submit" id="salvar" class="btn btn-lg" 
+					 <?php $conexaosql = mysqli_query($conectar, "INSERT INTO formula(tipo_formula, id_usuario, valor1, valor2, valor3, valor4, valor5)
+					VALUES ('MRU','$id_usuario','$valor1', '$valor2', '$valor3', '', '')"); 
+					?>
+					onclick="salvar();">Salvar</button></center>
 				</div>
 			</div>
 		</div>
@@ -76,5 +81,12 @@
         <script src="popper.js/dist/popper.js"></script>
         <script src="js/bootstrap.js"></script>
         
+
     </body>
+	<script>
+		function salvar(){
+			alert("Fórmula salva com sucesso.");
+			document.getElementById("salvar").style.cssText = "display: none;";
+		}
+	</script>
 </html>

@@ -12,6 +12,7 @@ $id_usuario = $_SESSION['id_user'];
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/perfil.css">
+	
 		
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -72,10 +73,32 @@ $id_usuario = $_SESSION['id_user'];
 				// $total_formula = mysqli_query($conectar, "SELECT COUNT(*) FROM formula WHERE id_usuario = $id_usuario" );
 				?>
 				<?php foreach ($select_formula as $usuario ) : ?>
-				<div class="row" id="linhaFavorito">
-    			<ul id="favorito" onclick="exibirFormula();">
-					<li><?php echo $usuario['id_formula']; ?></li>
-					<li><?php echo $usuario['tipo_formula']; ?></li>
+				<!-- <div class="row" id="linhaFavorito">
+					<ul id="favorito" onclick="exibirFormula();">
+						<li><?php echo $usuario['id_formula']; ?></li>
+						<li><?php echo $usuario['tipo_formula']; ?></li>
+					</ul>
+				</div> -->
+				<div class="accordion" id="accordionExample">
+					<div class="card">
+						<div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapse<?php echo $usuario['id_formula']; ?>" aria-expanded="true" aria-controls="collapseOne">
+						<h2 class="mb-0">
+							<button class="btn btn-link" type="button" >
+							#<?php echo $usuario['id_formula']; ?> - <?php echo $usuario['tipo_formula']; ?>
+							</button>
+						</h2>
+						</div>
+						<div id="collapse<?php echo $usuario['id_formula']; ?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+							<div class="card-body">
+								<?php if( $usuario['tipo_formula'] == 'MRU'){ ?>
+									S = So + (V . t)<br/>
+									S = <?php echo $usuario['valor1'] ?> + (<?php echo $usuario['valor2'] ?> . <?php echo $usuario['valor3'] ?>)<br/>
+									S = <?php echo $usuario['valor1'] ?> + <?php echo $usuario['valor2'] * $usuario['valor3'] ?><br/>
+									S = <?php echo $usuario['valor1'] +  ($usuario['valor2'] * $usuario['valor3']) ?> m
+								<?php }?>
+							</div>
+						</div>
+					</div>
 				</div>
 				<?php endforeach; ?>
 		</div>        
