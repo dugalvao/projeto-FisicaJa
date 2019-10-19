@@ -4,7 +4,6 @@
 	$valor1 = $_GET['valor1'];
 	$valor2 = $_GET['valor2'];
 	$valor3 = $_GET['valor3'];
-	$resultado = $valor1 + ($valor2 * $valor3);
 	
 	$conexaosql = mysqli_query($conectar, "INSERT INTO formula(valor1, valor2, valor3, valor4, valor5)
 	VALUES ('$valor1', '$valor2', '$valor3', '', '')");
@@ -43,8 +42,10 @@
   			</ul>
 		</nav> 
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10">
-			<h3><?php echo "V = $valor1 + " .($valor2 * $valor3);?></h3><br/>
-			<h3><?php echo "V = $resultado m/s";?></h3>
+			<h3><?php echo "V = $valor1 + ( $valor2 * $valor3 )";?></h3><br/>
+			<h3><?php echo "V = $valor1 + " .( $valor2 * $valor3 );?></h3><br/>
+			<?php $util1 = $valor1 + ( $valor2 * $valor3 ); ?>
+			<h3><?php echo "V = $util1 m/s";?></h3>
 			<a href="">
 				<button type="button" class="btn btn-lg">Salvar</button><br/>
 			</a>

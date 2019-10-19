@@ -1,0 +1,49 @@
+#h2formulas {
+    color: white;
+    /*text-shadow: 3px 3px 5px #A4A4A4;*/
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid grey;
+    text-align: center;
+    font-family: Bradley Hand, cursive;
+    background-color: #4d7887;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Bradley Hand, cursive;
+    /*background-image: url('../img/fundo_alta_qualidade2.jpg');*/
+    background-color: #264052;
+    /* to left: significa que o background vai começar da esquerda pra direita, tipo, dessa cor
+	pra ir mudando pra segunda, da esquerda pra direita, ou ao contrario */
+    /*background-image: linear-gradient(to left,  #357bbd, #fff);*/
+    /* background-repeat: no-repeat;*/
+}
+
+#divs {
+    border-radius: 15px 15px 15px 15px;
+    background-color: #F8F8FF;
+}
+
+.containerFavoritos {
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+#linhaFavorito {
+    background: #4d7887;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 4%;
+}
+
+#favorito {
+    text-align: center;
+    width: 80%;
+    list-style: none;
+}
+
+#favorito li {
+    color: white;
+}

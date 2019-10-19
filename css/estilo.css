@@ -10,10 +10,6 @@ body {
     /* background-repeat: no-repeat;*/
 }
 
-nav {
-    /*height: 70px;*/
-}
-
 form {
     border-radius: 10px;
     font-size: 16px;
@@ -39,7 +35,7 @@ p {
     font-family: Bradley Hand, cursive;
 }
 
-input {
+#inputBox {
     width: 450px;
     padding: 10px;
     border-radius: 3px;
@@ -96,8 +92,48 @@ footer {
     box-shadow: 0px 0px 0px 0px #363636;
 }
 
-@media (min-width: 500px) and (max-width: 1200px) {
+
+/*@media (min-width: 500px) and (max-width: 1200px) {
     body {
         background: blue !important;
     }
+}*/
+
+#formula {
+    text-decoration: none;
+    font-size: 35pt;
+    color: #264052;
+    text-shadow: 2px 2px 5px gray;
+    padding: 3px;
+    margin: 3px;
+}
+
+#formula:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 0px white;
+}
+
+#boxFormula {
+    width: 100px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid;
+}
+
+#txtDestaque {
+    text-shadow: 2px 2px 5px gray;
+    font-size: 20pt;
+    color: #264052;
+}
+
+#txtDestaque2 {
+    background-color: #8db4b5;
+    border-radius: 20px;
+    border: black;
+}
+
+#formularioMRU {
+    background: #F8F8FF !important;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }

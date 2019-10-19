@@ -42,9 +42,11 @@
   			</ul>
 		</nav> 
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10">
-			<h3><?php echo "So = $valor1 -  $valor2 x $valor3";?></h3><br/>
-			<h3><?php echo "So = $valor1 - " .($valor2 * $valor3);?></h3>
-			<h3><?php echo "So = $resultado";?></h3>
+			<h3><?php echo "$valor1 = So + ( $valor2 .  $valor3 )";?></h3><br/>
+			<h3><?php echo "$valor1 = So + " .( $valor2 * $valor3 );?></h3>
+			<h3><?php echo "So = $valor1 -" .( $valor2 * $valor3 );?></h3>
+			<?php $util1 = $valor1 - ( $valor2 * $valor3);?>
+			<h3><?php echo "So = $util1 m";?></h3>
 			<a href="">
 				<button type="button" class="btn btn-lg">Salvar</button><br/>
 			</a>

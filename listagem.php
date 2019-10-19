@@ -61,7 +61,7 @@
 			<h1 class="p-3"> S = So + V . t </h1>
 			</center>
 			<div class="container-fluid">
-				<a href="MRU.php>" class="btn btn-lg btn-block "  id="vermais">
+				<a href="MRU.php" class="btn btn-lg btn-block "  id="vermais">
 					Ver mais
 				</a>
 			</div>

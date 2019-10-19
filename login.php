@@ -47,8 +47,8 @@
 				<form id="login" name="formteste" method="POST" action="validalogin.php">
 					<br/>
 					<strong><h4 class="mt-2" id="aviso">DIGITE SEU EMAIL E SENHA:</h4></strong><br/>
-					<p><input type="email"class="col-10 col-sm-10 col-md-10 col-xl-10" name="email" placeholder="E-mail..." required="required"/></p><br/>
-					<p><input type="password" class="col-10 col-sm-10 col-md-10 col-xl-10" name="senha" placeholder="Senha..." required="required"/></p><br/>
+					<p><input id="inputBox" type="email"class="col-10 col-sm-10 col-md-10 col-xl-10" name="email" placeholder="E-mail..." required="required"/></p><br/>
+					<p><input id="inputBox" type="password" class="col-10 col-sm-10 col-md-10 col-xl-10" name="senha" placeholder="Senha..." required="required"/></p><br/>
 					<input type="submit" class="btn btn-outline-secondary col-10 col-sm-10 col-md-10 col-xl-10" name="btnLogin" value="Entrar">
 					
 					<?php if(isset($_SESSION['loginErro'])){?>
@@ -64,8 +64,12 @@
 				
 				
 			</center>
-		</div>
-		
+        </div>
+		<footer class="page-footer font-small blue pt-4 fixed-bottom">
+            <div class="footer-copyright text-center p-2">
+                © 2019 Copyright: Física Já
+            </div>
+        </footer>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="jquery/dist/jquery.js"></script>

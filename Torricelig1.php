@@ -5,7 +5,6 @@
 	$valor2 = $_GET['valor2'];
 	$valor3 = $_GET['valor3'];
 	$valor4 = $_GET['valor4'];
-	$resultado =($valor1 * $valor1) + 2 * $valor2 * ($valor3 - $valor4);
 	
 	$conexaosql = mysqli_query($conectar, "INSERT INTO formula(valor1, valor2, valor3, valor4, valor5)
 	VALUES ('$valor1', '$valor2', '$valor3', '$valor4', '')");
@@ -44,12 +43,18 @@
   			</ul>
 		</nav> 
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10">
-			<h3><?php echo "V ² = $valor1 ² + 2 . $valor2 . ($valor3 - $valor4)";?></h3><br/>
-			<h3><?php echo "V ² =" . $valor1 * $valor1 . "+ 2 . $valor2 ." . ($valor3 - $valor4) ;?></h3><br/>
-			<h3><?php echo "V ² =" . $valor1 * $valor1 . "+ 2 . ". $valor2 * ($valor3 - $valor4) ;?></h3><br/>
-			<h3><?php echo "V ² =" . $valor1 * $valor1 . "+" . 2 * $valor2 * ($valor3 - $valor4) ;?></h3><br/>
-			<h3><?php echo "V = v $resultado";?></h3><br/>
-			<h3><?php echo "V = " . sqrt($resultado) . "m/s";?></h3><br/>
+			<h3><?php echo "V ² = $valor1 ² + ( 2 . ( $valor2 . ( $valor3 - $valor4 )))";?></h3><br/>
+			<?php $util1 = $valor1 * $valor1 ;
+				  $util2 = $valor3 - $valor4 ;?>
+			<h3><?php echo "V ² = $util1 + ( 2 . ( $valor2 . $util2 ))";?></h3><br/>
+			<?php $util3 = $util2 * $valor2 ;?>
+			<h3><?php echo "V ² = $util1 + ( 2 . $util3 )";?></h3><br/>
+			<h3><?php echo "V ² = $util1 + " . ( 2 * $util3 );?></h3><br/>
+			<?php $util4 = ( 2 * $util3) + $util1 ;?>
+			<h3><?php echo "V ² = $util4";?></h3><br/>
+			<h3><?php echo "V =  √  $util4";?></h3><br/>
+			<h3><?php echo "V = " .  sqrt( $util4 ) . " m/s";?></h3><br/>
+
 			<a href="">
 				<button type="button" class="btn btn-lg">Salvar</button><br/>
 			</a>

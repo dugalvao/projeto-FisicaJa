@@ -1,43 +1,50 @@
-div{
-	background-color: #F8F8FF;
+div {
+    background-color: #F8F8FF;
 }
+
 body {
-	margin: 0;
-	padding: 0;
-	font-family: Bradley Hand, cursive;
-	/*background-image: url('../img/fundo_alta_qualidade2.jpg');*/
-	background-color: #68838B;
+    margin: 0;
+    padding: 0;
+    font-family: Bradley Hand, cursive;
+    /*background-image: url('../img/fundo_alta_qualidade2.jpg');*/
+    background-color: #68838B;
 }
-h4{
-	font-family: Times New Roman;
-	
+
+h4 {
+    font-family: Times New Roman;
 }
-nav{
-	font-size: 16pt;
+
+nav {
+    font-size: 16pt;
 }
-button{
-	width: 150px;
-	height: 40px;
-	background-color: #9BCD9B;
+
+button {
+    width: 150px;
+    height: 40px;
+    background-color: #9BCD9B;
 }
-button:hover{
-	background-color: #696969;
+
+button:hover {
+    background-color: #696969;
 }
-h2{
-	text-align: center;
-	font-family: Times New Roman;
-	background-color: #9BCD9B;
+
+h2 {
+    text-align: center;
+    font-family: Times New Roman;
+    background-color: #9BCD9B;
 }
-input{
-	width: 100px;
-	padding: 10px;
-	border-radius: 3px;
-	border: 1px solid;
+
+input {
+    width: 100px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid;
 }
-a:hover{
-	border-radius: 15px 15px 15px 15px;
-	box-shadow: 0px 0px 0px #F8F8FF;
-	background-color: #696969;
-	color: white;
-	text-shadow: 2px 2px 5px white;
+
+a:hover {
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 0px 0px #F8F8FF;
+    background-color: #696969;
+    color: white;
+    text-shadow: 2px 2px 5px white;
 }

@@ -4,14 +4,9 @@
 	$valor1 = $_GET['valor1'];
 	$valor2 = $_GET['valor2'];
 	$valor3 = $_GET['valor3'];
-	$valor4 = $_GET['valor4'];
-	$resultado = ($valor1 - $valor2) / ($valor3 - $valor4);
-	if($resultado == 0 ){
-		$resultado = null;
-	}
 	
 	$conexaosql = mysqli_query($conectar, "INSERT INTO formula(valor1, valor2, valor3, valor4, valor5)
-	VALUES ('$valor1', '$valor2', '$valor3', '$valor4', '')");
+	VALUES ('$valor1', '$valor2', '$valor3', '', '')");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,14 +42,13 @@
   			</ul>
 		</nav> 
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10">
-			<h3><?php echo "V = ($valor1 -  $valor2) /  ($valor3 - $valor4)";?></h3><br/>
-			<h3><?php echo "V =" .($valor1 - $valor2); echo "/" .($valor3 - $valor4);?></h3>
-			<?php if($resultado == 0 ){?>
-				<h3><?php echo "V = 0";?></h3>
-				
-			<?php } else{ ?>
-				<h3><?php echo "V = $resultado m/s";?></h3>
-			<?php } ?>
+			<h3><?php echo "$valor1 = $valor2 + ( V . $valor3 )";?></h3><br/>
+			<h3><?php echo "$valor1 - $valor2 = V . $valor3";?></h3><br/>
+			<h3><?php echo ( $valor1 - $valor2 ) ." = V . $valor3";?></h3><br/>
+			<h3><?php echo "V = ".( $valor1 - $valor2 )." / $valor3";?></h3><br/>
+			<h3><?php echo "V = ".( $valor1 - $valor2 ) / $valor3 . " m/s";?></h3><br/>
+
+
 			
 			<a href="">
 				<button type="button" class="btn btn-lg">Salvar</button><br/>

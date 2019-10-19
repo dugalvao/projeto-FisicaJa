@@ -28,7 +28,7 @@
   			<!-- Links -->
   			<ul class="navbar-nav">
     			<li class="nav-item">
-      				<a class="nav-link" href="inicial.html">Início</a>
+      				<a class="nav-link" href="paginaInicial.html">Início</a>
     			</li>
     			<!-- Dropdown -->
     			<li class="nav-item dropdown ">
@@ -44,9 +44,11 @@
   			</ul>
 		</nav> 
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10">
-			<h3><?php echo "t = ($valor1 -  $valor2) /  $valor3";?></h3><br/>
-			<h3><?php echo "t =" .($valor1 - $valor2); echo "/"  .$valor3;?></h3>
-			<h3><?php echo "t = $resultado s" ?></h3>
+			<h3><?php echo "$valor1 = $valor2 + ( $valor3 .  t )";?></h3><br/>
+			<h3><?php echo "$valor1 - $valor2 = ( $valor3 .  t )";?></h3><br/>
+			<h3><?php echo ($valor1 - $valor2) ." = ( $valor3 .  t )";?></h3><br/>
+			<h3><?php echo ($valor1 - $valor2) ." / $valor3 =  t ";?></h3><br/>
+			<h3><?php echo "t = " . ($valor1 - $valor2) / $valor3 . " s" ;?></h3><br/>
 			
 			<a href="">
 				<button type="button" class="btn btn-lg">Salvar</button><br/>

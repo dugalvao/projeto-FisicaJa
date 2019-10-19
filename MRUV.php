@@ -1,52 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php
+ include("conexao.php");
+ session_start();
+ ?>
     <head>
         <title>MRUV</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/listagem.css">
+        <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
-		<?php include("conexao.php");?>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-  			<!-- Brand -->
-  			<img src="img/logo.png" alt="logo" style="width:40px;">
+		
+	<div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="menu">
+            <!-- Brand -->
 
-  			<!-- Links -->
-  			<ul class="navbar-nav">
-    			<!-- Dropdown -->
-    			<li class="nav-item dropdown ">
+            <img src="img/logo.png" alt="logo" style="width:40px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+				<li class="nav-item dropdown ">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
         				Ensino Médio
       				</a>
       				<div class="dropdown-menu">
-        				<a class="dropdown-item" href="1ano.php?id=<?php $id_cookie = $_COOKIE['pega_id']; echo $id_cookie;?>">1° Série</a>
-        				<a class="dropdown-item" href="1ano.php?id=<?php $id_cookie = $_COOKIE['pega_id']; echo $id_cookie;?>">2° Série</a>
-        				<a class="dropdown-item" href="1ano.php?id=<?php $id_cookie = $_COOKIE['pega_id']; echo $id_cookie;?>">3° Série</a>
-						<a class="dropdown-item" href="listagem.php?id=<?php $id_cookie = $_COOKIE['pega_id']; echo $id_cookie;?>">Ver tudo</a>
+        				<a class="dropdown-item" href="1ano.php">1° Série</a>
+        				<a class="dropdown-item" href="2ano.php">2° Série</a>
+        				<a class="dropdown-item" href="3ano.php">3° Série</a>
       				</div>
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
         				<?php
-						$id = $_GET["id"];
-						$selectnome = mysqli_query($conectar, "select nome_usuario from usuario where id_usuario='$id'");
-						$resultado = mysqli_fetch_array($selectnome);
-						echo "Olá, " .$resultado["nome_usuario"];
+						//$id = $_GET["id"];
+						//$selectnome = mysqli_query($conectar, "select nome_usuario from usuario where id_usuario='$id'");
+						//$resultado = mysqli_fetch_array($selectnome);
+						//echo "Olá, " .$resultado["nome_usuario"];
+						echo "Olá, " .$_SESSION['name_user'];
 					?>
       				</a>
       				<div class="dropdown-menu">
-						<a class="dropdown-item" href="perfil.php?id=<?php $id_cookie = $_COOKIE['pega_id']; echo $id_cookie;?>">Ver perfil</a>
+						<a class="dropdown-item" href="perfil.php">Ver perfil</a>
         				<a class="dropdown-item" href="sair.php">Sair</a>
       				</div>
     			</li>
-  			</ul>
-		</nav> 
+                </ul>
+            </div>
+
+        </nav>
+    </div><br/>
 		<br/>
-		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3">
-		<h2  class="p-3">Movimento Retilíneo Uniforme (M.R.U.) - Velocidade Constante</h2><br/>
+		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
+		<h2  class="p-3" id="h2formulas">Movimento Retilíneo Uniforme (M.R.U.) - Velocidade Constante</h2><br/>
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10">
 			<div class="container col-10 col-sm-10 col-md-10 col-xl-10  p-3 mt-3" id="lembrete">
 				<img src="img/gifAlbert.gif" alt="Gif" height="155" width="75" align="left">
@@ -67,15 +78,16 @@
 			</h4><br/><br/><br/><br/>
 			Fonte: SAMPAIO, J. L.; CALÇADA, C. S. Física. Volume único. 2ª edição. São Paulo: Atual, 2005.
 		</div>
-		<h2 class="p-3 mt-3">Qual grandeza da fórmula do MRUV você deseja descobrir?</h2><br/>
-			<center><h3><a href="MRUVg1.html" id="grandeza" style="text-decoration:none; color:black;">S </a> = 
-			<a href="MRUVg2.html" id="grandeza" style="text-decoration:none; color:black;">So</a> + 
-			<a href="MRUVg3.html" id="grandeza" style="text-decoration:none; color:black;">Vo </a>.
-			<a href="MRUVg4.html" id="grandeza" style="text-decoration:none; color:black;">t </a>+ 1/2 .
-			<a href="MRUVg5.html" id="grandeza" style="text-decoration:none; color:black;">a</a> .
-			<a href="MRUVg6.html" id="grandeza" style="text-decoration:none; color:black;">t²</h2></center><br/>
 		</div><br/>
-		
+		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
+		<h2 class="p-3 mt-3" id="h2formulas">Qual grandeza da fórmula do MRUV você deseja descobrir?</h2><br/>
+			<center><h3><a href="MRUVg1.html" id="formula">S </a> = 
+			<a href="MRUVg2.html" id="formula" >So</a> + 
+			<a href="MRUVg3.html" id="formula">Vo </a>.
+			<a href="MRUVg4.html" id="formula">t </a>+ 1/2 .
+			<a href="MRUVg5.html" id="formula">a</a> .
+			<a href="MRUVg6.html" id="formula">t²</h2></center><br/>
+		</div>
 		
        
         <!-- Optional JavaScript -->
