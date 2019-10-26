@@ -21,6 +21,7 @@ body {
 }
 
 #formularioMRU {
+    border-radius: 10px;
     background: #F8F8FF !important;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -50,4 +51,13 @@ body {
 
 #resultado li {
     display: inline-block;
+}
+
+#divs {
+    border-radius: 15px 15px 15px 15px;
+    background-color: #F8F8FF;
+}
+
+#menu {
+    font-size: 16pt;
 }

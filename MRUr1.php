@@ -85,21 +85,7 @@
 
         </nav>
     </div><br/>
-		<!-- <div class="container " id="divs">
-			<div class="row">
-				<div class="col-12 col-sm-12 col-md-10 col-xl-10">
-					<h2 class="p-3 mt-3" id="h2formulas"><strong>S</strong> = So + ( V . t )</h2>
-					<form method="GET" action="MRUg1.php">
-						<center>
-						<h3><b>S = <input id="valor1" type="number" name="valor1" placeholder="So"  required="required"> + ( 
-						<input id="valor2" type="number" name="valor2" placeholder="V"  required="required"> .
-						<input id="valor3" type="number" name="valor3" placeholder="t"  required="required"> )</b></h3>
-						<button type="submit" class="btn btn-lg">Resolver</button>
-						</center>
-					</form>
-				</div>
-			</div>
-		</div>	 -->
+		
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
@@ -177,7 +163,7 @@
 			var so = document.getElementById("valor1").value;
 			var v = document.getElementById("valor2").value;
 			var t = document.getElementById("valor3").value;
-
+			
 			location.replace(`MRUg1.php?valor1=${so}&valor2=${v}&valor3=${t}`);
 		}
 	</script>

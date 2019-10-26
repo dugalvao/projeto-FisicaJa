@@ -9,8 +9,6 @@
 	$valor3 = $_GET['valor3'];
 	$resultado = $valor1 + ($valor2 * $valor3);
 	
-	// $conexaosql = mysqli_query($conectar, "INSERT INTO formula(tipo_formula, id_usuario, valor1, valor2, valor3, valor4, valor5)
-	// VALUES ('MRU','$id_usuario','$valor1', '$valor2', '$valor3', '', '')");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,10 +18,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="css/form.css">
+		<script>
+			function salvar(){	
+			alert("Fórmula salva com sucesso em seu perfil.");
+			document.getElementById("salvar").style.cssText = "display: none;";
+			}
+		
+	</script>
     </head>
     <body>
-	<div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
+	
+<div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="menu">
             <!-- Brand -->
 
@@ -64,15 +70,13 @@
 			<h3><?php echo "S = $valor1 + ( $valor2 . $valor3 )";?></h3><br/>
 			<h3><?php echo "S = $valor1 + " .( $valor2 * $valor3 );?></h3><br/>
 			<h3><?php echo "S = $resultado m";?></h3>
-			<div class="row">
+			
+		</div>
+		<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					<center><button type="submit" id="salvar" class="btn btn-lg" 
-					 <?php $conexaosql = mysqli_query($conectar, "INSERT INTO formula(tipo_formula, id_usuario, valor1, valor2, valor3, valor4, valor5)
-					VALUES ('MRU','$id_usuario','$valor1', '$valor2', '$valor3', '', '')"); 
-					?>
-					onclick="salvar();">Salvar</button></center>
+					<center><button id="salvar" class="btn btn-lg" onclick="salvar();" <?php $conexaosql = mysqli_query($conectar, "INSERT INTO formula(tipo_formula, id_usuario, valor1, valor2, valor3, valor4, valor5)
+				VALUES ('MRU - fórmula S','$id_usuario','$valor1', '$valor2', '$valor3', '', '')"); ?>	>Salvar</button></center>
 				</div>
-			</div>
 		</div>
 		
         <!-- Optional JavaScript -->
@@ -83,10 +87,5 @@
         
 
     </body>
-	<script>
-		function salvar(){
-			alert("Fórmula salva com sucesso.");
-			document.getElementById("salvar").style.cssText = "display: none;";
-		}
-	</script>
+	
 </html>

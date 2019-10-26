@@ -6,7 +6,7 @@ $id_usuario = $_SESSION['id_user'];
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Fórmulas</title>
+        <title>Perfil</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
@@ -70,7 +70,6 @@ $id_usuario = $_SESSION['id_user'];
 		<div class="container containerFavoritos col-10 col-sm-10 col-md-10 col-xl-10" id="divs">
 			<?php 
 				$select_formula = mysqli_query($conectar, "SELECT * from formula WHERE id_usuario = $id_usuario" );
-				// $total_formula = mysqli_query($conectar, "SELECT COUNT(*) FROM formula WHERE id_usuario = $id_usuario" );
 				?>
 				<?php foreach ($select_formula as $usuario ) : ?>
 				<!-- <div class="row" id="linhaFavorito">
@@ -90,11 +89,22 @@ $id_usuario = $_SESSION['id_user'];
 						</div>
 						<div id="collapse<?php echo $usuario['id_formula']; ?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 							<div class="card-body">
-								<?php if( $usuario['tipo_formula'] == 'MRU'){ ?>
-									S = So + (V . t)<br/>
-									S = <?php echo $usuario['valor1'] ?> + (<?php echo $usuario['valor2'] ?> . <?php echo $usuario['valor3'] ?>)<br/>
-									S = <?php echo $usuario['valor1'] ?> + <?php echo $usuario['valor2'] * $usuario['valor3'] ?><br/>
-									S = <?php echo $usuario['valor1'] +  ($usuario['valor2'] * $usuario['valor3']) ?> m
+								<?php if( $usuario['tipo_formula'] == 'MRU - fórmula S'){ ?>
+									<h3>S = So + (V . t)</h3><br/>
+									<h3>S = <?php echo $usuario['valor1'] ?> + (<?php echo $usuario['valor2'] ?> . <?php echo $usuario['valor3'] ?>)</h3><br/>
+									<h3>S = <?php echo $usuario['valor1'] ?> + <?php echo $usuario['valor2'] * $usuario['valor3'] ?></h3><br/>
+									<h3>S = <?php echo $usuario['valor1'] +  ($usuario['valor2'] * $usuario['valor3']) ?> m</h3>
+								<?php }?>
+								<?php if( $usuario['tipo_formula'] == 'MRU - fórmula So'){ ?>
+									<h3>S = So + (V . t)</h3><br/>
+									<h3><?php echo $usuario['valor1']?> = So + (<?php echo $usuario['valor2']?> . <?php echo $usuario['valor3']?>)</h3><br/>
+									<h3><?php echo $usuario['valor1']?> = So + <?php echo $usuario['valor2'] * $usuario['valor3'];?></h3><br/>
+									<h3><?php echo "-So = ".( $usuario['valor1']* -1);?> + <?php echo ( $usuario['valor2'] * $usuario['valor3']  );?></h3>
+									<?php $util1 = ( $usuario['valor1']* -1) + ( $usuario['valor2'] * $usuario['valor3']);?><br/>
+									<h3><?php echo "-So = $util1 m";?></h3><br/>
+									<h3><?php echo "-So ( . -1) = $util1 m ( . -1)";?></h3><br/>
+									<h3><?php echo "So  = " .($util1 * -1); echo "m";?></h3><br/>
+									
 								<?php }?>
 							</div>
 						</div>
