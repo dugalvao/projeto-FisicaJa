@@ -18,14 +18,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/form.css">
-		<script>
-			function salvar(){	
-			alert("Fórmula salva com sucesso em seu perfil.");
-			document.getElementById("salvar").style.cssText = "display: none;";
-			}
-		
-	</script>
+		<link rel="stylesheet" href="css/form.css">
+		<link rel="stylesheet" href="css/fontello.css">
+		<link rel="stylesheet" href="css/confirm.css">
+		  <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="jquery/dist/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+		<link rel="stylesheet" href="css/jquery-confirm.css">
+		<script src="js/jquery-confirm.js"></script>
     </head>
     <body>
 	
@@ -74,18 +75,50 @@
 		</div>
 		<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					<center><button id="salvar" class="btn btn-lg" onclick="salvar();" <?php $conexaosql = mysqli_query($conectar, "INSERT INTO formula(tipo_formula, id_usuario, valor1, valor2, valor3, valor4, valor5)
-				VALUES ('MRU - fórmula S','$id_usuario','$valor1', '$valor2', '$valor3', '', '')"); ?>	>Salvar</button></center>
+					<center><button id="salvar" class="btn btn-lg" onclick="salvar();">Salvar</button></center>
 				</div>
 		</div>
 		
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="jquery/dist/jquery.js"></script>
-        <script src="popper.js/dist/popper.js"></script>
-        <script src="js/bootstrap.js"></script>
+      
         
 
     </body>
-	
+	<script>
+			function salvar(){	
+				
+				
+				
+				document.getElementById("salvar").style.cssText = "display: none;";
+				const urlParams = new URLSearchParams(window.location.search);   
+				const myParam1 = urlParams.get('valor1');    
+				const  valor1 = Number(myParam1);
+
+				const myParam2 = urlParams.get('valor2');    
+				const  valor2 = Number(myParam2);
+
+				const myParam3 = urlParams.get('valor3');    
+				const  valor3 = Number(myParam3);
+
+				const valores = `valor1=${valor1}&valor2=${valor2}&valor3=${valor3}`;
+				$.ajax({
+					url: "salvar.php",
+					type: "POST",
+					data: valores,
+					dataType: "html",
+					success: function(response) {
+                    	$.confirm({
+							icon: 'icon-emo-laugh',
+							title: 'Sucesso!', // TITULO QUE VAI APARECER NO BOX
+							content: 'Resolução salva em seu perfil.', // MENSAGEM
+							buttons: {
+								OK: function () {
+								},
+							}
+						});
+						}
+				})
+
+			}
+		
+	</script>
 </html>

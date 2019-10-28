@@ -12,6 +12,7 @@ $id_usuario = $_SESSION['id_user'];
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/perfil.css">
+		<link rel="stylesheet" href="css/sanfona.css">
 	
 		
         <!-- Optional JavaScript -->
@@ -71,6 +72,11 @@ $id_usuario = $_SESSION['id_user'];
 			<?php 
 				$select_formula = mysqli_query($conectar, "SELECT * from formula WHERE id_usuario = $id_usuario" );
 				?>
+				<?php
+					$i = 1;
+
+
+				?>
 				<?php foreach ($select_formula as $usuario ) : ?>
 				<!-- <div class="row" id="linhaFavorito">
 					<ul id="favorito" onclick="exibirFormula();">
@@ -83,7 +89,7 @@ $id_usuario = $_SESSION['id_user'];
 						<div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapse<?php echo $usuario['id_formula']; ?>" aria-expanded="true" aria-controls="collapseOne">
 						<h2 class="mb-0">
 							<button class="btn btn-link" type="button" >
-							#<?php echo $usuario['id_formula']; ?> - <?php echo $usuario['tipo_formula']; ?>
+							#<?php echo $i; ?> - <?php echo $usuario['tipo_formula']; ?>
 							</button>
 						</h2>
 						</div>
@@ -106,6 +112,7 @@ $id_usuario = $_SESSION['id_user'];
 									<h3><?php echo "So  = " .($util1 * -1); echo "m";?></h3><br/>
 									
 								<?php }?>
+								<?php $i++; ?>
 							</div>
 						</div>
 					</div>

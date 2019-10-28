@@ -96,13 +96,13 @@
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<form action="GET" action="MRUg1.php" id="formularioMRU">
 						<label>So<p>
-							<input  id="valor1" name="valor1" type="number" placeholder="So"  onkeyup="pegarvalor();" maxlength="20">
+							<input  id="valor1" name="valor1" type="number" placeholder="So"   onkeyup="pegarvalor();" maxlength="20">
 						</label>
 						<label>V<p>
-							<input  id="valor2"  name ="valor2" type="number" placeholder="V"   onkeyup="pegarvalor();" maxlength="20">
+							<input  id="valor2"  name ="valor2" type="number" placeholder="V"  onkeyup="pegarvalor();" maxlength="20">
 						</label>
 						<label>t<p>
-							<input  id="valor3" name="valor3" type="number" placeholder="t"  onkeyup="pegarvalor();" maxlength="20">
+							<input  id="valor3" name="valor3" type="number" placeholder="t"   onkeyup="pegarvalor();" maxlength="20">
 						</label><br/>
 						<div class="col-xs-12">
 							<ul id="resultado" style="display: none;">
@@ -163,6 +163,11 @@
 			var so = document.getElementById("valor1").value;
 			var v = document.getElementById("valor2").value;
 			var t = document.getElementById("valor3").value;
+
+			if(so == "" || v == "" || t == ""){
+				alert("Campos vazios");
+				return;
+			}
 			
 			location.replace(`MRUg1.php?valor1=${so}&valor2=${v}&valor3=${t}`);
 		}
