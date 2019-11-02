@@ -5,7 +5,7 @@
 ?>
 <html lang="pt-br">
     <head>
-        <title>MRU</title>
+        <title>MRU - S</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
@@ -67,13 +67,7 @@
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
-        				<?php
-						//$id = $_GET["id"];
-						//$selectnome = mysqli_query($conectar, "select nome_usuario from usuario where id_usuario='$id'");
-						//$resultado = mysqli_fetch_array($selectnome);
-						//echo "Olá, " .$resultado["nome_usuario"];
-						echo "Olá, " .$_SESSION['name_user'];
-					?>
+        				<?php echo "Olá, " .$_SESSION['name_user'];?>
       				</a>
       				<div class="dropdown-menu">
 						<a class="dropdown-item" href="perfil.php">Ver perfil</a>
@@ -82,10 +76,8 @@
     			</li>
                 </ul>
             </div>
-
         </nav>
     </div><br/>
-		
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
@@ -116,14 +108,11 @@
 				</div>
 			</div>
 			<div class="row">
-				
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					 <center><button type="submit" class="btn btn-lg" onclick="enviar();">Resolver</button></center>				
+					 <center><button type="submit" id="resolver" class="btn btn-lg" onclick="enviar();">Resolver</button></center>				
 				</div>
 			</div>
 		</div>
-
-        
 	</body>
 	
 	<script>

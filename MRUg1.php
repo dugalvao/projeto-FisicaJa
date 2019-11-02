@@ -2,8 +2,6 @@
 	session_start();
 	include("conexao.php");
 	$id_usuario = $_SESSION['id_user'];
-	
-
 	$valor1 = $_GET['valor1'];
 	$valor2 = $_GET['valor2'];
 	$valor3 = $_GET['valor3'];
@@ -13,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>MRU</title>
+        <title>MRU - S</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
@@ -78,17 +76,10 @@
 					<center><button id="salvar" class="btn btn-lg" onclick="salvar();">Salvar</button></center>
 				</div>
 		</div>
-		
-      
-        
-
     </body>
 	<script>
 			function salvar(){	
-				
-				
-				
-				document.getElementById("salvar").style.cssText = "display: none;";
+				document.getElementById("salvar").style.cssText = "display: none;"; //pegar botão por ID
 				const urlParams = new URLSearchParams(window.location.search);   
 				const myParam1 = urlParams.get('valor1');    
 				const  valor1 = Number(myParam1);
@@ -101,16 +92,16 @@
 
 				const valores = `valor1=${valor1}&valor2=${valor2}&valor3=${valor3}`;
 				$.ajax({
-					url: "salvar.php",
-					type: "POST",
-					data: valores,
+					url: "salvar.php",//pagina em php que ira fazer o insert dos dados
+					type: "POST",//metodo que ira passar os dados
+					data: valores, //dados
 					dataType: "html",
-					success: function(response) {
-                    	$.confirm({
-							icon: 'icon-emo-laugh',
+					success: function(response) { //se der "sucesso" ira entrar na função
+                    	$.confirm({ //caixa de dialogo confirmando os dados salvos no perfil
+							icon: 'icon-emo-laugh',//ICONE
 							title: 'Sucesso!', // TITULO QUE VAI APARECER NO BOX
 							content: 'Resolução salva em seu perfil.', // MENSAGEM
-							buttons: {
+							buttons: {//botão de "ok" da caixa de dialogo
 								OK: function () {
 								},
 							}

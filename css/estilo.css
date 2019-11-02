@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: Bradley Hand, cursive;
     /*background-image: url('../img/fundo_alta_qualidade2.jpg');*/
-    background-color: #264052;
+    background-color: #374858;
     /* to left: significa que o background vai começar da esquerda pra direita, tipo, dessa cor
 	pra ir mudando pra segunda, da esquerda pra direita, ou ao contrario */
     /*background-image: linear-gradient(to left,  #357bbd, #fff);*/
@@ -48,18 +48,25 @@ button {
 }
 
 #h2formulas {
-    color: white;
+    color: #d7d7ea;
     /*text-shadow: 3px 3px 5px #A4A4A4;*/
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 2.1em;
     border: 1px solid grey;
     text-align: center;
     font-family: Bradley Hand, cursive;
-    background-color: #4d7887;
+    background-color: #284254;
 }
 
 #divs {
     border-radius: 15px 15px 15px 15px;
-    background-color: #F8F8FF;
+    background-color: #d7d7ea;
+}
+
+#divsBorder {
+    border-radius: 15px 15px 15px 15px;
+    background-color: #bcdde8a1;
+    border: 0.3em groove #4d7887;
+    padding: 1em;
 }
 
 #menu {
@@ -83,7 +90,7 @@ footer {
 #vermais {
     text-decoration: none;
     color: white;
-    background-color: #4d7887;
+    background-color: #284254;
     box-shadow: 5px 5px 5px 5px gray;
 }
 
@@ -135,4 +142,15 @@ footer {
     background: #F8F8FF !important;
     padding-top: 1em;
     padding-bottom: 1em;
+}
+
+.alert-primary {
+    color: #d2e7f0;
+    background-color: #284254;
+    border-color: #d2e7f0;
+    border-radius: 1.2em;
+}
+
+#text-conteudo {
+    text-align: justify;
 }

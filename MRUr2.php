@@ -47,7 +47,6 @@
 	<div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="menu">
             <!-- Brand -->
-
             <img src="img/logo.png" alt="logo" style="width:40px;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -67,13 +66,7 @@
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
-        				<?php
-						//$id = $_GET["id"];
-						//$selectnome = mysqli_query($conectar, "select nome_usuario from usuario where id_usuario='$id'");
-						//$resultado = mysqli_fetch_array($selectnome);
-						//echo "Olá, " .$resultado["nome_usuario"];
-						echo "Olá, " .$_SESSION['name_user'];
-					?>
+        				<?php echo "Olá, " .$_SESSION['name_user']; ?>
       				</a>
       				<div class="dropdown-menu">
 						<a class="dropdown-item" href="perfil.php">Ver perfil</a>
@@ -82,22 +75,8 @@
     			</li>
                 </ul>
             </div>
-
         </nav>
     </div><br/>
-		
-		<!--<div class="container col-12 col-sm-12 col-md-10 col-xl-10">
-			<h2>S = <strong>So</strong> + ( V . t )</h2>
-			<form method="GET" action="MRUg2.php">
-				<center>
-				<h3><b><input type="number" name="valor1" placeholder="S"  required="required"> = So + (
-				<input type="number" name="valor2" placeholder="V"  required="required"> .
-				<input type="number" name="valor3" placeholder="t"  required="required"> )</b></h3>
-				<button type="submit" class="btn btn-lg">Resolver</button>
-				</center>
-			</form>
-		</div><br/> -->
-		
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
@@ -129,7 +108,7 @@
 			</div>
 			<div class="row">	
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					 <center><button type="submit" class="btn btn-lg" onclick="enviar();">Resolver</button></center>				
+					 <center><button type="submit" id="resolver" class="btn btn-lg" onclick="enviar();">Resolver</button></center>				
 				</div>
 			</div>
 		</div>
@@ -172,11 +151,14 @@
 			var v = document.getElementById("valor2").value;
 			var t = document.getElementById("valor3").value;
 
+			if(so == "" || v == "" || t == ""){
+				alert("Campos vazios");
+				return;
+			}
+
 			location.replace(`MRUg2.php?valor1=${so}&valor2=${v}&valor3=${t}`);
 		}
-	</script>
-        
-        
+	</script>    
     </body>
 </html>
 </html>

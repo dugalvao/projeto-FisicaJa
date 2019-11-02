@@ -38,12 +38,8 @@
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
         				<?php
-						//$id = $_GET["id"];
-						//$selectnome = mysqli_query($conectar, "select nome_usuario from usuario where id_usuario='$id'");
-						//$resultado = mysqli_fetch_array($selectnome);
-						//echo "Olá, " .$resultado["nome_usuario"];
 						echo "Olá, " .$_SESSION['name_user'];
-					?>
+						?>
       				</a>
       				<div class="dropdown-menu">
 						<a class="dropdown-item" href="perfil.php">Ver perfil</a>

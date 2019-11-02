@@ -74,8 +74,6 @@ $id_usuario = $_SESSION['id_user'];
 				?>
 				<?php
 					$i = 1;
-
-
 				?>
 				<?php foreach ($select_formula as $usuario ) : ?>
 				<!-- <div class="row" id="linhaFavorito">
@@ -109,9 +107,22 @@ $id_usuario = $_SESSION['id_user'];
 									<?php $util1 = ( $usuario['valor1']* -1) + ( $usuario['valor2'] * $usuario['valor3']);?><br/>
 									<h3><?php echo "-So = $util1 m";?></h3><br/>
 									<h3><?php echo "-So ( . -1) = $util1 m ( . -1)";?></h3><br/>
-									<h3><?php echo "So  = " .($util1 * -1); echo "m";?></h3><br/>
-									
+									<h3><?php echo "So  = " .($util1 = $util1 * -1); echo "m";?></h3><br/>
+									<?php
+									$resultForm2 = number_format($util1, 2,  ',', '');?>
+									<h3><?php echo "So  = ".$resultForm2."m";?></h3><br/>
 								<?php }?>
+								<?php if($usuario['tipo_formula'] == 'MRU - fórmula t'){?>
+									<h3>S = So + (V . t)</h3><br/>
+									<h3><?php echo $usuario['valor1']?> = <?php echo $usuario['valor2']?> + ( <?php echo $usuario['valor3']?>.  t )</h3><br/>
+									<h3><?php echo  $usuario['valor1']?> - <?php echo  $usuario['valor2']?> = ( <?php echo $usuario['valor3'] ?>.  t )</h3><br/>
+									<h3><?php echo  ($usuario['valor1'] - $usuario['valor2']) ?> = ( <?php echo $usuario['valor3'] ?> .  t )</h3><br/>
+									<h3><?php echo ($usuario['valor1'] - $usuario['valor2']) ?> / <?php echo $usuario['valor3']?> = t </h3><br/>
+									<?php
+									 	$resultado = ($usuario['valor1'] - $usuario['valor2']) / $usuario['valor3'];
+										$resultForm2 = number_format($resultado, 2,  ',', '');?>
+									<h3><?php echo "t = " . $resultForm2 . " s"?></h3><br/>
+								<?php } ?>
 								<?php $i++; ?>
 							</div>
 						</div>

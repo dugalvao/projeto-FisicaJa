@@ -42,6 +42,24 @@ body {
     border: 1px solid #4d7887;
     border-radius: 5px;
     padding-left: 2%;
+    background: white;
+    outline: none;
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+}
+
+#formularioMRU input:focus {
+    border: 1px solid #4d7887;
+    border-radius: 5px;
+    padding-left: 2%;
+    background: rgb(196, 206, 241);
+    outline: none;
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
 }
 
 #resultado {
@@ -55,9 +73,34 @@ body {
 
 #divs {
     border-radius: 15px 15px 15px 15px;
-    background-color: #F8F8FF;
+    background-color: #d7d7ea;
 }
 
 #menu {
     font-size: 16pt;
+}
+
+#resolver,
+#salvar {
+    background: #bcc8d2;
+    border-radius: 0.9em;
+    margin-top: .5em;
+    text-transform: uppercase;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+
+#resolver:hover,
+#salvar:hover {
+    opacity: 0.5;
+    background: #c6d1da;
+    border-radius: 0.9em;
+    margin-top: .5em;
+    padding: 0.6em 1.3em;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    transition: 0.3s linear;
 }

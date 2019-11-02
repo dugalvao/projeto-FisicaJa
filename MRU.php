@@ -2,7 +2,6 @@
 <?php
 	session_start();
 	include("conexao.php");
-
 ?>
 <html lang="pt-br">
     <head>
@@ -11,8 +10,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/estilo.css">
-    </head>
+       
+		<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+		
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" href="css/estilo.css">
+		<link rel="stylesheet" href="css/fontello.css">
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+	</head>
     <body>
 	<div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="menu">
@@ -37,13 +43,7 @@
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
-        				<?php
-						//$id = $_GET["id"];
-						//$selectnome = mysqli_query($conectar, "select nome_usuario from usuario where id_usuario='$id'");
-						//$resultado = mysqli_fetch_array($selectnome);
-						//echo "Olá, " .$resultado["nome_usuario"];
-						echo "Olá, " .$_SESSION['name_user'];
-					?>
+        				<?php echo "Olá, " .$_SESSION['name_user']; ?>
       				</a>
       				<div class="dropdown-menu">
 						<a class="dropdown-item" href="perfil.php">Ver perfil</a>
@@ -52,23 +52,31 @@
     			</li>
                 </ul>
             </div>
-
         </nav>
     </div><br/>
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
 			<h2  class="p-3" id="h2formulas">Movimento Retilíneo Uniforme (M.R.U.) - Velocidade Constante</h2><br/>
-
-			<div class="container col-12 col-sm-12 col-md-10 col-xl-10" id="divs">
-				<div class="container col-10 col-sm-10 col-md-10 col-xl-10" id="lembrete">
-					<img src="img/gifAlbert.gif" alt="Gif" height="145" width="75" align="left">
-					<h4 class="p-3"> <strong> Não se esqueça, para S=So+V.t temos:</strong><br/>
-						<strong>S </strong><img src="img/seta.jpg" alt="Seta verde" height="15" width="25"> metros (m)<br/>
-						<strong>So </strong><img src="img/seta.jpg" alt="Seta verde" height="15" width="25"> metros (m) <br/>
-						<strong>V </strong><img src="img/seta.jpg" alt="Seta verde" height="15" width="25"> metros por segundo (m/s)<br/>
-						<strong>t </strong> <img src="img/seta.jpg" alt="Seta verde" height="15" width="25"> segundos (s)<br/>
+			<div class="container col-12 col-sm-12 col-md-10 col-xl-10" id="divsBorder">
+			<!-- <h2 class="p-2" id="h2formulas" style=" width: 100%;">Qual grandeza você quer descobrir?</h2><br/> -->
+				<center>
+					<h4>
+					<a href="MRUr1.php" id="formula"> S </a> = <a href="MRUr2.php" id="formula"> So </a> + 
+					<a href="MRUr3.php" id="formula"> V </a> . <a href="MRUr4.php" id="formula"> t </a>
 					</h4>
+				</center>
+				<div class="alert alert-primary" role="alert">
+					<center><strong>CLIQUE NA GRANDEZA QUE DESEJA DESCOBRIR!</strong></center>
 				</div>
-				<h4>	
+			</div>
+			<div class="container col-12 col-sm-12 col-md-10 col-xl-10" id="divs">
+					<!-- <img src="img/gifAlbert.gif" alt="Gif" height="145" width="75" align="left"> -->
+					<h4 class="p-3" id="lembrete"> <strong> Não se esqueça, para S=So+V.t temos:</strong><br/>
+						<strong>S </strong><span class="icon-right" aria-hidden="true"></span> metros (m)<br/>
+						<strong>So </strong><span class="icon-right" aria-hidden="true"></span> metros (m) <br/>
+						<strong>V </strong><span class="icon-right" aria-hidden="true"></span>metros por segundo (m/s)<br/>
+						<strong>t </strong><span class="icon-right" aria-hidden="true"></span> segundos (s)<br/>
+					</h4>
+				<h4 id="text-conteudo">	
 					O Movimento Retilíneo Uniforme (MRU) é o movimento no qual a velocidade permanece constante.
 					Considerando uma partícula em MRU, com velocidade escalar V (que pode ser positiva ou negativa)
 					e iniciando a contagem dos tempos (t0 = 0), a partícula apresenta a abscissa S0 (espaço inicial).
@@ -80,25 +88,13 @@
 				</h4><br/>
 				Fonte: SAMPAIO, J. L.; CALÇADA, C. S. Física. Volume único. 2ª edição. São Paulo: Atual, 2005.
 				
-			</div>
-			
-				
+			</div>	
 		</div><br/>
-		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
-			<h2  class="p-3 mt-3" id="h2formulas">Qual grandeza você quer descobrir?</h2><br/>
-			<center>
-				<h4>
-				<a href="MRUr1.php" id="formula"> S </a> = <a href="MRUr2.php" id="formula"> So </a> + 
-				<a href="MRUr3.php" id="formula"> V </a> . <a href="MRUr4.php" id="formula"> t </a>
-				</h4>
-			</center>
-</div>
 		
-       
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="jquery/dist/jquery.js"></script>
-        <script src="popper.js/dist/popper.js"></script>
+        <!-- <script src="popper.js/dist/popper.js"></script> -->
         <script src="js/bootstrap.js"></script>
         
     </body>
