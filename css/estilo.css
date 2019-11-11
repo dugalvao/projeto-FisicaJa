@@ -11,24 +11,31 @@ body {
 }
 
 form {
-    border-radius: 10px;
+    border-radius: 2.1em;
     font-size: 16px;
-    background-color: #DCDCDC;
+    background-color: #acbfcc;
     max-width: 500px;
     margin: 0 auto;
     padding: 0px 10px 10px 10px;
 }
 
 #texto {
-    border-radius: 35px 35px 35px 35px;
+    border-radius: 0.1em;
     background-color: #F8F8FF;
 }
 
 #aviso {
-    text-shadow: 1px 5px 8px white;
+    text-shadow: 1px 5px 8px grey;
     text-align: justify-all;
-    color: #264052;
+    color: #374858;
     font-size: 20pt;
+}
+
+#aviso2 {
+    text-shadow: 1px 5px 8px grey;
+    text-align: ;
+    color: #374858;
+    font-size: 14pt;
 }
 
 p {
@@ -38,7 +45,7 @@ p {
 #inputBox {
     width: 450px;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 1.1em;
     border: 1px #363636;
 }
 
@@ -58,99 +65,165 @@ button {
 }
 
 #divs {
-    border-radius: 15px 15px 15px 15px;
     background-color: #d7d7ea;
 }
 
 #divsBorder {
     border-radius: 15px 15px 15px 15px;
-    background-color: #bcdde8a1;
+    background-color: #284254;
     border: 0.3em groove #4d7887;
-    padding: 1em;
+    padding: 2.5em;
 }
 
+
+}
 #menu {
     font-size: 16pt;
 }
-
 li:hover {
     box-shadow: 0px 0px 0px #F8F8FF;
     background-color: #696969;
     color: white;
     text-shadow: 2px 2px 5px white;
-    border-radius: 10px 10px 10px 10px;
 }
-
+.dropdown-item:hover {
+    background-color: #415564de;
+    color: white;
+    text-shadow: 2px 2px 3px white;
+}
 footer {
-    border-radius: 10px 10px 0px 0px;
-    color: white;
-    background-color: #1e211f;
+    border-radius: 0.1em;
+    color: #d7d7ea;
+    background-color: #343a40;
 }
-
 #vermais {
-    text-decoration: none;
-    color: white;
-    background-color: #284254;
-    box-shadow: 5px 5px 5px 5px gray;
+    background: #284254;
+    border-radius: 0.9em;
+    margin-top: 0.5em;
+    text-transform: uppercase;
+    color: #d7d7ea;
+    box-shadow: 6px 9px 10px grey;
+    border: 0.1em solid #898d90;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    transition: 0.3s linear;
 }
-
 #vermais:hover {
-    box-shadow: 0px 0px 0px 0px #363636;
+    opacity: 0.8;
+    background: #284254;
+    border-radius: 0.9em;
+    margin-top: .5em;
+    padding: 0.6em 0.3em;
+    font-size: 16pt;
+    color: #eaeaef;
+    box-shadow: 6px 9px 10px grey;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    transition: 0.3s linear;
 }
-
-
-/*@media (min-width: 500px) and (max-width: 1200px) {
-    body {
-        background: blue !important;
-    }
-}*/
-
 #formula {
     text-decoration: none;
     font-size: 35pt;
-    color: #264052;
-    text-shadow: 2px 2px 5px gray;
+    color: #d7d7ea;
+    text-shadow: 1px 2px 2px grey;
     padding: 3px;
     margin: 3px;
 }
 
-#formula:hover {
+/*#formula:hover {
     text-decoration: none;
     text-shadow: 0px 0px 0px white;
+    font-size: 45pt;
+    font-weight: bold;
+    outline: none;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    transition: 0.3s linear;
+}*/
+#formulaSemHover {
+    text-decoration: none;
+    font-size: 35pt;
+    color: #d7d7ea;
+    text-shadow: 2px 2px 5px grey;
+    padding: 3px;
+    margin: 3px;
 }
-
 #boxFormula {
     width: 100px;
     padding: 10px;
     border-radius: 3px;
     border: 1px solid;
 }
-
 #txtDestaque {
     text-shadow: 2px 2px 5px gray;
     font-size: 20pt;
     color: #264052;
 }
-
 #txtDestaque2 {
     background-color: #8db4b5;
     border-radius: 20px;
     border: black;
 }
-
+#txtDestaque3 {
+    color: #a6c6c7;
+}
 #formularioMRU {
     background: #F8F8FF !important;
     padding-top: 1em;
     padding-bottom: 1em;
 }
-
-.alert-primary {
-    color: #d2e7f0;
-    background-color: #284254;
-    border-color: #d2e7f0;
-    border-radius: 1.2em;
-}
-
 #text-conteudo {
     text-align: justify;
+}
+.btn-outline-secondary {
+    color: #374858;
+    background-color: transparent;
+    background-image: none;
+    border-color: #374858;
+    border-radius: 1.1em;
+}
+.btn-outline-secondary:hover {
+    color: #acbfcc;
+    background-color: #374858;
+    background-image: none;
+    border-color: #374858;
+    border-radius: 1.1em;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #d7d7ea;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+.img-thumbnail {
+    padding: 0.25rem;
+    background-color: #284254;
+    border: 1px solid #284254;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1.1em;
+}
+#btnlogin,
+#btncadastro {
+    width: 450px;
+}
+h1 {
+    text-shadow: 2px 5px 5px grey;
 }

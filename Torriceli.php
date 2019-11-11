@@ -10,7 +10,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/estilo.css">
+		<link rel="stylesheet" href="css/estilo.css">
+		<link rel="stylesheet" href="css/fontello.css">
     </head>
     <body>
 	
@@ -38,12 +39,8 @@
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
         				<?php
-						//$id = $_GET["id"];
-						//$selectnome = mysqli_query($conectar, "select nome_usuario from usuario where id_usuario='$id'");
-						//$resultado = mysqli_fetch_array($selectnome);
-						//echo "Olá, " .$resultado["nome_usuario"];
-						echo "Olá, " .$_SESSION['name_user'];
-					?>
+							echo "Olá, " .$_SESSION['name_user'];
+						?>
       				</a>
       				<div class="dropdown-menu">
 						<a class="dropdown-item" href="perfil.php">Ver perfil</a>
@@ -52,13 +49,24 @@
     			</li>
                 </ul>
             </div>
-
         </nav>
-    </div><br/>
+	</div><br/>
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10" id="divs">
 			<br/>
 			<h2 class="p-3 m-3" id="h2formulas">Equação de Torriceli</h2><br/>
-
+			<div class="container col-12 col-sm-12 col-md-10 col-xl-10" id="divsBorder">
+				<div  class="container col-12 col-sm-12 col-md-10 col-xl-10"  id="txtDestaque3">
+					<center><strong>CLIQUE NA GRANDEZA QUE DESEJA DESCOBRIR!</strong></center>
+				</div>
+				<center>
+					<h4 id="formulaSemHover">
+					<a href="Torricelir1.php" id="formula"> V²</a> = <a href="Torricelir2.php" id="formula"> Vo² </a> + 2 . 
+					<a href="Torricelir3.php" id="formula"> a </a> . (<a href="Torricelir4.php" id="formula"> S </a> -
+					<a href="Torricelir5.php" id="formula"> So</a>)
+					</h4>
+				</center>
+				
+			</div>
 			<div class="container col-12 col-sm-12 col-md-10 col-xl-10">
 				<img src="img/gifAlbert.gif" alt="Gif" height="145" width="75" align="left">
 				<h4> <strong> Não se esqueça, para V²=Vo²+2.a.(S - So) temos:</strong><br/>
@@ -80,18 +88,6 @@
 				
 				
 		</div><br/>
-		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
-		<h2 class="p-3 mt-3" id="h2formulas">Qual grandeza você quer descobrir?</h2><br/>
-				
-				<center><h3 class="p-2 mt-2"><a href="MRUg1.html" id="formula">V²</a> = 
-				<a href="MRUg2.html" id="formula">Vo²</a> 
-				+ 2.<a href="MRUg3.html" id="formula" >a</a> . 
-				(<a href="MRUg4.html"id="formula">S</a> - 
-				<a href="MRUg4.html"id="formula">So</a>)
-				</h3></center><br/>
-		</div>	
-		
-		
        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

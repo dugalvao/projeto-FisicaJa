@@ -1,4 +1,5 @@
 <?php
+    include("conexao.php");
 	session_start();
 ?>
 <!doctype html>
@@ -41,15 +42,17 @@
         </nav>
     </div><br/>
 
-		<br/><br/><br/>
+		<br/>
 		<div  class="container-fluid col-12 col-sm-12 col-md-10 col-xl-10 p-2 mt-2">
 			<center>
 				<form id="login" name="formteste" method="POST" action="validalogin.php">
 					<br/>
-					<strong><h4 class="mt-2" id="aviso">DIGITE SEU EMAIL E SENHA:</h4></strong><br/>
-					<p><input id="inputBox" type="email"class="col-10 col-sm-10 col-md-10 col-xl-10" name="email" placeholder="E-mail..." required="required"/></p><br/>
-					<p><input id="inputBox" type="password" class="col-10 col-sm-10 col-md-10 col-xl-10" name="senha" placeholder="Senha..." required="required"/></p><br/>
-					<input type="submit" class="btn btn-outline-secondary col-10 col-sm-10 col-md-10 col-xl-10" name="btnLogin" value="Entrar">
+					<strong><h4 class="mt-2" id="aviso">DIGITE SEU E-MAIL E SENHA</h4></strong><br/>
+                    <h4 class="mt-2" id="aviso2">E-mail:</h4>
+					<p><input id="inputBox" type="email"class="col-10 col-sm-10 col-md-10 col-xl-10" name="email" placeholder="Digite seu e-mail..." required="required"/></p><br/>
+                    <h4 class="mt-2" id="aviso2">Senha:</h4>
+					<p><input id="inputBox" type="password" class="col-10 col-sm-10 col-md-10 col-xl-10" name="senha" placeholder="Digite sua senha..." required="required"/></p><br/>
+					<p><input id="btnlogin" type="submit" class="btn btn-outline-secondary col-10 col-sm-10 col-md-10 col-xl-10" name="btnLogin" value="Entrar"></p>
 					
 					<?php if(isset($_SESSION['loginErro'])){?>
 						<div class="p-3 mt-3 alert alert-danger alert-dismissible ">

@@ -123,7 +123,145 @@ $id_usuario = $_SESSION['id_user'];
 										$resultForm2 = number_format($resultado, 2,  ',', '');?>
 									<h3><?php echo "t = " . $resultForm2 . " s"?></h3><br/>
 								<?php } ?>
+								<?php if($usuario['tipo_formula'] == 'MRU - fórmula V'){?>
+									<h3>S = So + (V . t)</h3><br/>
+									<h3><?php echo $usuario['valor1']?> = <?php echo $usuario['valor2']?> + (V . <?php echo $usuario['valor3']?>)</h3><br/>
+									<h3><?php echo  $usuario['valor1']?> - <?php echo  $usuario['valor2']?> = V . <?php echo $usuario['valor3'] ?></h3><br/>
+									<h3><?php echo  ($usuario['valor1'] - $usuario['valor2']) ?> = V . <?php echo $usuario['valor3'] ?></h3><br/>
+									<h3>V = <?php echo ($usuario['valor1'] - $usuario['valor2'])?> / <?php echo $usuario['valor3']?></h3><br/>
+									<?php
+									 	$resultado = ($usuario['valor1'] - $usuario['valor2']) / $usuario['valor3'];
+										$resultForm2 = number_format($resultado, 2,  ',', '');?>
+									<h3><?php echo "V = " . $resultForm2 . " m/s"?></h3><br/>
+								<?php } ?>
+								<?php if($usuario['tipo_formula'] == 'Torricelli - V'){?>
+									<h3>V² = Vo² + 2 . a . (S - So)</h3><br/>
+									<h3>V² = <?php echo $usuario['valor1']?>² + 2 . <?php echo $usuario['valor2']?>. (<?php echo $usuario['valor3']?> - <?php echo $usuario['valor4']?>)</h3><br/>
+									<?php $util1_torriceli_v = $usuario['valor1'] * $usuario['valor1'];
+										$util2_torriceli_v = $usuario['valor3']- $usuario['valor4'] ;
+										$util3_torriceli_v = 2 * $usuario['valor2'] ?>
+									<h3>V ² = <?php echo  $usuario['valor1'] ?>² + 2 . <?php echo  $usuario['valor2']?>. (<?php echo $util2_torriceli_v ?> )</h3><br/>
+									<h3>V ² = <?php echo $util1_torriceli_v ?> +  2 . <?php echo $usuario['valor2']?> . <?php echo $util2_torriceli_v ?></h3><br/>
+									<h3><?php echo "V ² = $util1_torriceli_v  + $util3_torriceli_v   . $util2_torriceli_v ";?></h3><br/>
+									<?php $util4_torriceli_v  = $util3_torriceli_v  * $util2_torriceli_v ;?>
+									<h3><?php echo "V ² = $util1_torriceli_v  + $util4_torriceli_v  ";?></h3><br/>
+									<?php $resposta_torriceli_v  = $util1_torriceli_v  + $util4_torriceli_v ;?>
+									<h3><?php echo "V ² = $resposta_torriceli_v ";?></h3><br/>
+									<h3><?php echo "V =  √  $resposta_torriceli_v ";?></h3><br/>
+									<?php
+										if($resposta_torriceli_v  < 0){
+											$_SESSION['RespostaRaiz_torriceli_v'] = "Obs.: não existe raiz de número negativo.";
+											$resp_torriceli_v = $_SESSION['RespostaRaiz_torriceli_v'];
+										}else{?>
+											<h3><?php
+											$raiz_torriceli_v  = sqrt($resposta_torriceli_v );
+											$resultForm_torriceli_v  = number_format($raiz_torriceli_v , 2,  ',', '');
+											echo "V =" .$resultForm_torriceli_v. "m/s"; 
+											$resp_torriceli_v  = "";
+											?></h3>
+										<?php }?>
+									<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
+									<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $resp_torriceli_v ?></div></h3>		
+								<?php } ?>
+								<?php if($usuario['tipo_formula'] == 'Torricelli - Vo'){?>
+									<h3>V² = Vo² + 2 . a . (S - So)</h3><br/>
+									<h3><?php echo $usuario['valor1']?>² = Vo² + 2 . <?php echo $usuario['valor2']?>. (<?php echo $usuario['valor3']?> - <?php echo $usuario['valor4']?>)</h3><br/>
+									<?php $util1_torriceli_vo = $usuario['valor1'] * $usuario['valor1'];
+										$util2_torriceli_vo = $usuario['valor3'] - $usuario['valor4'] ;?>
+									<h3><?php echo $util1_torriceli_vo ?> = Vo ² +  2 .  <?php echo $usuario['valor2']?> . <?php echo $util2_torriceli_vo ?></h3><br/>
+									<?php $util3_torriceli_vo = $util2_torriceli_vo * $usuario['valor2'] ;?>
+									<h3><?php echo "$util1_torriceli_vo  = Vo ² + 2 . $util3_torriceli_vo ";?></h3><br/>
+									<h3><?php echo "$util1_torriceli_vo  = Vo ² + (" .  2 * $util3_torriceli_vo  .")";?></h3><br/>
+									<h3><?php echo "$util1_torriceli_vo  - " . 2 * $util3_torriceli_vo ." = Vo ² ";?></h3><br/>
+									<?php $util4_torriceli_vo  = $util1_torriceli_vo  - ( 2 * $util3_torriceli_vo ) ;?>
+									<h3><?php echo "Vo ² = $util4_torriceli_vo ";?></h3><br/>
+									<h3><?php echo "Vo = √  $util4_torriceli_vo ";?></h3><br/>
+									<h3><?php $resposta_torriceli_vo  = $util4_torriceli_vo ;?></h3>
+									<?php
+										if($resposta_torriceli_vo  < 0){
+											$_SESSION['RespostaRaiz'] = "Obs.: não existe raiz de número negativo.";
+											$resp_torriceli_vo  = $_SESSION['RespostaRaiz'];
+										}else{?>
+											<h3><?php
+											$raiz_torriceli_vo  = sqrt($resposta_torriceli_vo );
+											$resultForm_torriceli_vo  = number_format($raiz_torriceli_vo , 2,  ',', '');
+											echo "Vo = " .$resultForm_torriceli_vo . " m/s"; 
+											$resp_torriceli_vo  = "";
+											?></h3>
+										<?php }?>
+									<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
+									<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $resp_torriceli_vo  ?></div></h3>
+									<?php } ?>
+									<?php if($usuario['tipo_formula'] == 'Torricelli - a'){?>
+										<h3>V² = Vo² + 2 . a . (S - So)</h3><br/>
+										<h3><?php echo  $usuario['valor1']?>² = <?php echo $usuario['valor2']?>² +  2 . a . (<?php echo  $usuario['valor3']?> - <?php echo  $usuario['valor4']?>)</h3><br/>
+										<?php $util1_torricelli_a = $usuario['valor1'] * $usuario['valor1'];
+											$util2_torricelli_a = $usuario['valor2'] * $usuario['valor2'];
+											$util3_torricelli_a = $usuario['valor3'] - $usuario['valor4'];?>
+										<h3><?php echo "$util1_torricelli_a = $util2_torricelli_a +  2 . a . $util3_torricelli_a";?></h3><br/>
+										<?php $util4_torricelli_a = $util3_torricelli_a * 2 ;?>
+										<h3><?php echo "$util1_torricelli_a = $util2_torricelli_a +  ( $util4_torricelli_a a )";?></h3><br/>
+										<h3><?php echo "$util1_torricelli_a - $util2_torricelli_a =  $util4_torricelli_a a ";?></h3><br/>
+										<?php $util5_torricelli_a = $util1_torricelli_a - $util2_torricelli_a;?>
+										<h3><?php echo "$util5_torricelli_a =   $util4_torricelli_a a ";?></h3><br/>
+										<h3><?php echo "$util5_torricelli_a / $util4_torricelli_a  = a";?></h3><br/>
+										<?php $resposta_torricelli_a = $util5_torricelli_a / $util4_torricelli_a; ?>
+										<?php $resultForm_torricelli_a = number_format($resposta_torricelli_a, 2,  ',', ''); ?>
+										<h3><?php echo "a = " .$resultForm_torricelli_a. " m/s²" ;?></h3><br/>
+									<?php } ?>
 								<?php $i++; ?>
+								<?php if($usuario['tipo_formula'] == 'Torricelli - S'){?>
+									<h3>V² = Vo² + 2 . a . (S - So)</h3><br/>
+									<h3><?php echo  $usuario['valor1']?> ² = <?php echo $usuario['valor2']?> ² +  2 . <?php echo  $usuario['valor3']?>. ( S - <?php echo  $usuario['valor4'] ?>)</h3><br/>
+										<?php $util1_torricelli_s = $usuario['valor1'] * $usuario['valor1'];
+											$util2_torricelli_s = $usuario['valor2'] * $usuario['valor2'];?>
+										<h3><?php echo $util1_torricelli_s ?> = <?php echo $util2_torricelli_s?> + ( 2 . ( <?php echo $usuario['valor3']?> . ( S - <?php echo $usuario['valor4']?>)))</h3><br/>
+										<?php $util3_torricelli_s =  $usuario['valor3'] *  $usuario['valor4'];?>
+										<h3><?php echo $util1_torricelli_s ?> = <?php echo $util2_torricelli_s?> + ( 2 . ((<?php echo $usuario['valor3']?> . S ) - <?php echo $util3_torricelli_s ?>))</h3><br/>
+										<?php $util4_torricelli_s = $util3_torricelli_s * 2 ;
+											$util5_torricelli_s =  $usuario['valor3'] * 2 ;?>
+										<h3><?php echo "$util1_torricelli_s = $util2_torricelli_s + (( $util5_torricelli_s . S ) - $util4_torricelli_s )";?></h3><br/>
+										<h3><?php echo "$util1_torricelli_s - $util2_torricelli_s = (( $util5_torricelli_s . S ) - $util4_torricelli_s )";?></h3><br/>
+										<?php $util6_torricelli_s = $util1_torricelli_s - $util2_torricelli_s ;?>
+										<h3><?php echo "$util6_torricelli_s = ( $util5_torricelli_s . S ) - $util4_torricelli_s ";?></h3><br/>
+										<h3><?php echo "$util6_torricelli_s + $util4_torricelli_s = $util5_torricelli_s . S ";?></h3><br/>
+										<?php $util7_torricelli_s = $util6_torricelli_s + $util4_torricelli_s ;?>
+										<h3><?php echo "$util7_torricelli_s = $util5_torricelli_s . S ";?></h3><br/>
+										<h3><?php echo "$util7_torricelli_s / $util5_torricelli_s = S ";?></h3><br/>
+										<?php $resposta_torricelli_s = $util7_torricelli_s / $util5_torricelli_s;?>
+										<?php $resultForm_torricelli_s = number_format($resposta_torricelli_s, 2,  ',', ''); ?>
+										<h3><?php echo "S = " .$resultForm_torricelli_s. " m";?></h3><br/>
+								<?php } ?>
+								<?php if($usuario['tipo_formula'] == 'Torricelli - So'){?>
+								<h3>V² = Vo² + 2 . a . (S - So)</h3><br/>
+								<h3><?php echo $usuario['valor1']?>² = <?php echo $usuario['valor2']?>² + 2 . <?php echo  $usuario['valor3']?> . ( <?php echo $usuario['valor4']?> - So )</h3><br/>
+								<?php $util1_torriceli_so = $usuario['valor1'] * $usuario['valor1'];
+									$util2_torriceli_so  = $usuario['valor2'] * $usuario['valor2'] ;?>
+								<h3><?php echo $util1_torriceli_so ?> = <?php echo $util2_torriceli_so?> + 2 . <?php echo $usuario['valor3']?> . (<?php echo $usuario['valor4']?> - So )</h3><br/>
+								<?php $util3_torriceli_so  = $usuario['valor3'] * 2 ;?>
+								<h3><?php echo $util1_torriceli_so?> = <?php echo $util2_torriceli_so?>  + <?php echo $util3_torriceli_so?> . (<?php echo $usuario['valor4']?> - So )</h3><br/>
+								<?php $util4_torriceli_so  = $util3_torriceli_so  * $usuario['valor4'];
+									$util5_torriceli_so  =  $util3_torriceli_so  * -1;?>
+								<h3><?php echo $util1_torriceli_so?>  = <?php echo $util2_torriceli_so?>  + <?php echo $util4_torriceli_so?>
+								<?php if( $util5_torriceli_so  < 0){
+									echo "$util5_torriceli_so  So";
+								}elseif($util5_torriceli_so  >= 0){
+									echo " - $util5_torriceli_so  So";
+								}?></h3><br/>
+								<h3><?php echo $util1_torriceli_so?> - <?php echo $util2_torriceli_so?>  = <?php echo $util4_torriceli_so?>
+								<?php if( $util5_torriceli_so  < 0){
+									echo "". $util5_torriceli_so . " So";
+								}elseif($util5_torriceli_so  > 0){
+									$util5_torriceli_so  = $util5_torriceli_so  * -1;
+									echo " $util5_torriceli_so  So";
+								}?></h3><br/>
+								<?php $util6_torriceli_so  = $util1_torriceli_so  - $util2_torriceli_so  - $util4_torriceli_so  ;?>
+								<h3><?php echo "$util1_torriceli_so  - $util2_torriceli_so  -  $util4_torriceli_so  =  $util5_torriceli_so  So ";?></h3><br/>
+								<h3><?php echo "$util6_torriceli_so  / $util5_torriceli_so  =  So ";?></h3><br/> 
+								<?php $resposta_torriceli_so  =  $util6_torriceli_so  / $util5_torriceli_so ;?>
+								<?php $resultForm_torriceli_so  = number_format($resposta_torriceli_so , 2,  ',', ''); ?>
+								<h3><?php echo "So = " .$resultForm_torriceli_so . " m";?></h3><br/>
+							<?php } ?>
 							</div>
 						</div>
 					</div>
@@ -131,10 +269,5 @@ $id_usuario = $_SESSION['id_user'];
 				<?php endforeach; ?>
 		</div>        
 	</body>
-	<script>
-		function exibirFormula(){
-			
-			// window.open("formulaSalva.php");
-		}
-	</script>
+		
 </html>

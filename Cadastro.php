@@ -43,11 +43,18 @@
 				<form id="login" name="formteste" method="POST" action="cadastroInsert.php" class="p-2 mt-2">
 					<br/>
 					<strong><h4 class="mt-2" id="aviso"> PREENCHA TODOS OS CAMPOS ABAIXO: </h4></strong><br/>
-					<p><input id="inputBox" class="col-10 col-sm-10 col-md-10 col-xl-10" type="text" name="nomeU" placeholder="Informe seu nome..." required="required"/></p><br/>
-					<p><input id="inputBox"  class="col-10 col-sm-10 col-md-10 col-xl-10" type="text" name="sobrenomeU" placeholder="Informe seu sobrenome..." required="required"/></p><br/>
-					<p><input id="inputBox" class="col-10 col-sm-10 col-md-10 col-xl-10" type="email" name="emailU" placeholder="Informe um e-mail..."required="required"/></p><br/>
-					<p><input id="inputBox" class="col-10 col-sm-10 col-md-10 col-xl-10"type="password" name="senhaU" placeholder="Informe uma senha..."required="required"/></p><br/>
-					<input type="submit" class="btn btn-outline-secondary btn-block col-10 col-sm-10 col-md-10 col-xl-10" value="Cadastrar">
+                        <h4 class="mt-2" id="aviso2">Nome:</h4>
+                        <p><input id="inputBox" class="col-10 col-sm-10 col-md-10 col-xl-10" type="text" name="nomeU" placeholder="Digite seu nome..." required="required"/></p>
+					
+                        <h4 class="mt-2" id="aviso2">Sobrenome:</h4>
+                        <p><input id="inputBox"  class="col-10 col-sm-10 col-md-10 col-xl-10" type="text" name="sobrenomeU" placeholder="Digite seu sobrenome..." required="required"/><p>
+					
+                        <h4 class="mt-2" id="aviso2">E-mail:</h4>
+                        <p><input id="inputBox" class="col-10 col-sm-10 col-md-10 col-xl-10" type="email" name="emailU" placeholder="Digite um e-mail..."required="required"/></p>
+					
+                        <h4 class="mt-2" id="aviso2">Senha:</h4>
+                        <p><input id="inputBox" class="col-10 col-sm-10 col-md-10 col-xl-10"type="password" name="senhaU" placeholder="Digite uma senha..."required="required"/></p><br/>
+					    <p><input id="btncadastro" type="submit" class="btn btn-outline-secondary btn-block col-10 col-sm-10 col-md-10 col-xl-10" value="Cadastrar"></p>
 				</form>
 					
 			</center>

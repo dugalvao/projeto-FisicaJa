@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+	session_start();
+	include("conexao.php");
+?>
 <html lang="pt-br">
     <head>
 	<title>MRU - t</title>

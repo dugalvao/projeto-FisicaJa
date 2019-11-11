@@ -30,9 +30,9 @@
         				Ensino Médio
       				</a>
       				<div class="dropdown-menu">
-        				<a class="dropdown-item" href="1ano.php">1° Série</a>
-        				<a class="dropdown-item" href="2ano.php">2° Série</a>
-        				<a class="dropdown-item" href="3ano.php">3° Série</a>
+        				<a class="dropdown-item" id="linkMenu" href="1ano.php">1° Série</a>
+        				<a class="dropdown-item" id="linkMenu" href="2ano.php">2° Série</a>
+        				<a class="dropdown-item" id="linkMenu" href="3ano.php">3° Série</a>
       				</div>
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">

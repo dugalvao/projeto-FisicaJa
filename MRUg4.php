@@ -75,7 +75,8 @@
 			<h3><?php echo ($valor1 - $valor2) ." = ( $valor3 .  t )";?></h3><br/>
 			<h3><?php echo ($valor1 - $valor2) ." / $valor3 =  t ";?></h3><br/>
 			<h3><?php echo "t = " . $resultForm . " s" ;?></h3><br/>
-			<div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $req ?></div>	
+			<!-- a linha abaixo, printa a observação usando a resposta do if-else lá em cima-->
+			<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $req ?></div></h3>
 		</div> 
 		<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">

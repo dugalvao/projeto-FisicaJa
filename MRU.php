@@ -11,9 +11,6 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
        
-		<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
-		
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
 		<link rel="stylesheet" href="css/estilo.css">
 		<link rel="stylesheet" href="css/fontello.css">
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -57,16 +54,15 @@
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
 			<h2  class="p-3" id="h2formulas">Movimento Retilíneo Uniforme (M.R.U.) - Velocidade Constante</h2><br/>
 			<div class="container col-12 col-sm-12 col-md-10 col-xl-10" id="divsBorder">
-			<!-- <h2 class="p-2" id="h2formulas" style=" width: 100%;">Qual grandeza você quer descobrir?</h2><br/> -->
+				<div  class="container col-12 col-sm-12 col-md-10 col-xl-10"  id="txtDestaque3">
+					<center><strong>CLIQUE NA GRANDEZA QUE DESEJA DESCOBRIR!</strong></center>
+				</div>
 				<center>
-					<h4>
+					<h4 id="formulaSemHover">
 					<a href="MRUr1.php" id="formula"> S </a> = <a href="MRUr2.php" id="formula"> So </a> + 
 					<a href="MRUr3.php" id="formula"> V </a> . <a href="MRUr4.php" id="formula"> t </a>
 					</h4>
 				</center>
-				<div class="alert alert-primary" role="alert">
-					<center><strong>CLIQUE NA GRANDEZA QUE DESEJA DESCOBRIR!</strong></center>
-				</div>
 			</div>
 			<div class="container col-12 col-sm-12 col-md-10 col-xl-10" id="divs">
 					<!-- <img src="img/gifAlbert.gif" alt="Gif" height="145" width="75" align="left"> -->

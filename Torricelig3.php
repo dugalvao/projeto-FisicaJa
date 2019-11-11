@@ -1,7 +1,7 @@
 <?php
-	include("conexao.php");
 	session_start();
-
+	include("conexao.php");
+	
 	$valor1 = $_GET['valor1'];
 	$valor2 = $_GET['valor2'];
 	$valor3 = $_GET['valor3'];
@@ -16,7 +16,7 @@
 		<title>Equação de Torricelli</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Bootstrap CSS -->
+	<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/form.css">
 		<link rel="stylesheet" href="css/fontello.css">
@@ -31,6 +31,8 @@
     <body>
 	<div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="menu">
+            <!-- Brand -->
+
             <img src="img/logo.png" alt="logo" style="width:40px;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -60,35 +62,22 @@
                 </ul>
             </div>
         </nav>
-	</div><br/> 
+	</div><br/>
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10" id="divs">
-			<h3><?php echo "$valor1 ² = $valor2 ² + 2 . $valor3 . ( $valor4 - So )";?></h3><br/>
+			<h3><?php echo "$valor1 ² = $valor2 ² +  2 . a . ( $valor3 - $valor4 )";?></h3><br/>
 			<?php $util1 = $valor1 * $valor1 ;
-				  $util2 = $valor2 * $valor2 ;?>
-			<h3><?php echo "$util1 = $util2 + 2 . $valor3 . ( $valor4 - So )";?></h3><br/>
-			<?php $util3 = $valor3 * 2 ;?>
-			<h3><?php echo "$util1 = $util2 + $util3 . ( $valor4 - So )";?></h3><br/>
-			<?php $util4 = $util3 * $valor4;
-				  $util5 =  $util3 * -1;?>
-			<h3><?php echo "$util1 = $util2 + $util4";?>
-			<?php if( $util5 < 0){
-				echo "$util5 So";
-			}elseif($util5 >= 0){
-				echo " - $util5 So";
-			}?></h3><br/>
-			<h3><?php echo "$util1 - $util2 =  $util4"?>
-			<?php if( $util5 < 0){
-				echo "". $util5. " So";
-			}elseif($util5 > 0){
-				$util5 = $util5 * -1;
-				echo " $util5 So";
-			}?></h3><br/>
-			<?php $util6 = $util1 - $util2 - $util4 ;?>
-			<h3><?php echo "$util1 - $util2 -  $util4 =  $util5 So ";?></h3><br/>
-			<h3><?php echo "$util6 / $util5 =  So ";?></h3><br/> 
-			<?php $resposta =  $util6 / $util5;?>
+				  $util2 = $valor2 * $valor2 ;
+				  $util3 = $valor3 - $valor4 ;?>
+			<h3><?php echo "$util1 = $util2 +  2 . a .  $util3";?></h3><br/>
+			<?php $util4 = $util3 * 2 ;?>
+			<h3><?php echo "$util1 = $util2 +  ( $util4 a )";?></h3><br/>
+			<h3><?php echo "$util1 - $util2 =  $util4 a ";?></h3><br/>
+			<?php $util5 = $util1 - $util2 ;?>
+			<h3><?php echo "$util5 =   $util4 a ";?></h3><br/>
+			<h3><?php echo "$util5 / $util4  = a";?></h3><br/>
+			<?php $resposta = $util5 / $util4; ?>
 			<?php $resultForm = number_format($resposta, 2,  ',', ''); ?>
-			<h3><?php echo "So = " .$resultForm. " m";?></h3><br/>
+			<h3><?php echo "a = " .$resultForm. " m/s²" ;?></h3><br/>
 		</div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
@@ -114,7 +103,7 @@
 
 				const valores = `valor1=${valor1}&valor2=${valor2}&valor3=${valor3}&valor4=${valor4}`;
 				$.ajax({
-					url: "salvar9.php",//pagina em php que ira fazer o insert dos dados
+					url: "salvar7.php",//pagina em php que ira fazer o insert dos dados
 					type: "POST",//metodo que ira passar os dados
 					data: valores, //dados
 					dataType: "html",

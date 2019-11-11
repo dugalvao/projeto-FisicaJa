@@ -87,10 +87,10 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<form action="GET" action="MRUg1.php" id="formularioMRU">
-						<label>So<p>
-							<input  id="valor1" name="valor1" type="number" placeholder="So"   onkeyup="pegarvalor();" maxlength="20">
+						<label id="aviso2">So<p>
+							<input  id="valor1"  name="valor1" type="number" placeholder="So"   onkeyup="pegarvalor();" maxlength="20">
 						</label>
-						<label>V<p>
+						<label id="aviso2">V<p>
 							<input  id="valor2"  name ="valor2" type="number" placeholder="V"  onkeyup="pegarvalor();" maxlength="20">
 						</label>
 						<label>t<p>
