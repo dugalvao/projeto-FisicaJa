@@ -3,7 +3,7 @@
     /*text-shadow: 3px 3px 5px #A4A4A4;*/
     border-radius: 15px 15px 15px 15px;
     border: 1px solid grey;
-    text-align: center;
+    /*text-align: justify;*/
     font-family: Bradley Hand, cursive;
     background-color: #4d7887;
 }
@@ -48,10 +48,6 @@ body {
     color: white;
 }
 
-#menu {
-    font-size: 16pt;
-}
-
 .dropdown-item:hover {
     background-color: #284254de;
     color: white;
@@ -63,8 +59,6 @@ li:hover {
     box-shadow: 0px 0px 0px #F8F8FF;
     background-color: #696969;
     color: white;
-    text-shadow: 2px 2px 5px white;
-    border-radius: 10px 10px 10px 10px;
 }
 
 .dropdown-menu {
@@ -85,4 +79,15 @@ li:hover {
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
+}
+
+.alert-warning {
+    color: #ffd96c;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16pt;
 }

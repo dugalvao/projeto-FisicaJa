@@ -11,7 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/estilo.css">
+		<link rel="stylesheet" href="css/estilo.css">
+		<link rel="stylesheet" href="css/fontello.css">
     </head>
     <body>
        <div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
@@ -37,6 +38,7 @@
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
+					  <span class="icon-user-female" aria-hidden="true"></span>
         				<?php
 						echo "Olá, " .$_SESSION['name_user'];
 						?>
@@ -62,6 +64,28 @@
 				</a>
 			</div>
 		</div>
+		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
+		<h2 class="p-3" id="h2formulas">Equação de Torricelli</h2>
+			<center>
+			<h1 class="p-3">V² = Vo² + 2 . a . (So - S)</h1>
+			</center>
+			<div class="container-fluid">
+				<a href="Torriceli.php" class="btn btn-lg btn-block w-100 "  id="vermais">  
+					Ver mais
+				</a>
+			</div>
+		</div><br/>
+		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
+		<h2 class="p-3" id="h2formulas">Campo elétrico</h2>
+			<center>
+			<h1 class="p-3">E = (K . q)/ D²</h1>
+			</center>
+			<div class="container-fluid">
+				<a href="CampEletr.php" class="btn btn-lg btn-block w-100 " id="vermais">
+					Ver mais
+				</a>	
+			</div>
+		</div><br/>
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10  p-3 mt-3" id="divs">
 		<h2 class="p-3" id="h2formulas" >Movimento Retilíneo Uniformemente Variado (M.R.U.V.) - Aceleração Constante</h2>
 			<center>
@@ -80,17 +104,6 @@
 			</center>
 			<div class="container-fluid">
 				<a href="EHV.php" class="btn btn-lg btn-block w-100 " id="vermais">
-					Ver mais
-				</a>
-			</div>
-		</div><br/>
-		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
-		<h2 class="p-3" id="h2formulas">Equação de Torriceli</h2>
-			<center>
-			<h1 class="p-3">V² = Vo² + 2 . a . (So - S)</h1>
-			</center>
-			<div class="container-fluid">
-				<a href="Torriceli.php" class="btn btn-lg btn-block w-100 "  id="vermais">  
 					Ver mais
 				</a>
 			</div>
@@ -139,17 +152,6 @@
 			</center>
 			<div class="container-fluid">
 				<a href="#" class="btn btn-lg btn-block w-100 "  id="vermais">
-					Ver mais
-				</a>	
-			</div>
-		</div><br/>
-		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
-		<h2 class="p-3" id="h2formulas">Campo elétrico</h2>
-			<center>
-			<h1 class="p-3">E = (K . q)/ D²</h1>
-			</center>
-			<div class="container-fluid">
-				<a href="#" class="btn btn-lg btn-block w-100 " id="vermais">
 					Ver mais
 				</a>	
 			</div>

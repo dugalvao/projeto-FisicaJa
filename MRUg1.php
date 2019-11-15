@@ -28,7 +28,7 @@
     </head>
     <body>
 	
-<div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
+	<div class="container-fluid col-10 col-sm-10 col-md-10 col-xl-10 p-3 mt-3">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="menu">
             <!-- Brand -->
 
@@ -51,6 +51,7 @@
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
+					  <span class="icon-user-female" aria-hidden="true"></span>
         				<?php
 						echo "Olá, " .$_SESSION['name_user'];
 						?>

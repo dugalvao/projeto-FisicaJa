@@ -7,8 +7,6 @@
 	$valor3 = $_GET['valor3'];
 	$valor4 = $_GET['valor4'];
 	
-	//$conexaosql = mysqli_query($conectar, "INSERT INTO formula(valor1, valor2, valor3, valor4, valor5)
-	//VALUES ('$valor1', '$valor2', '$valor3', '$valor4', '')");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

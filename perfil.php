@@ -13,7 +13,7 @@ $id_usuario = $_SESSION['id_user'];
         <link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/perfil.css">
 		<link rel="stylesheet" href="css/sanfona.css">
-	
+		<link rel="stylesheet" href="css/fontello.css">
 		
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -46,6 +46,7 @@ $id_usuario = $_SESSION['id_user'];
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
+					  <span class="icon-user-female" aria-hidden="true"></span>
         				<?php
 						echo "Olá, " .$_SESSION['name_user'];
 						?>
@@ -62,16 +63,28 @@ $id_usuario = $_SESSION['id_user'];
     </div><br/>
 		<div class="alert alert-info alert-dismissible">
 		    <button type="button" class="close" data-dismiss="alert">&times;</button>
-		    <center><strong>Aqui em seu perfil suas fórmulas ficarão sempre salvas, para que você veja mais tarde. Bom estudo!</strong></center>
+		    <center><strong>Aqui em seu perfil suas fórmulas ficarão sempre salvas, para que você veja mais tarde. 
+				Bom estudo!  <span class="icon-emo-happy" aria-hidden="true"></span></strong></center>
 		</div>
 		
 		<div class="container col-10 col-sm-10 col-md-10 col-xl-10">
-			<center><h2 class="p-3 mt-3" id="h2formulas">Fórmulas salvas</h2></center>
+			<center><h2 class="p-3 mt-3" id="h2formulas"> <span class="icon-ok" aria-hidden="true"></span> Lista das resoluções arquivadas</h2>
 		</div>
 		<div class="container containerFavoritos col-10 col-sm-10 col-md-10 col-xl-10" id="divs">
-			<?php 
-				$select_formula = mysqli_query($conectar, "SELECT * from formula WHERE id_usuario = $id_usuario" );
+				<?php 
+					$select_formula = mysqli_query($conectar, "SELECT * from formula WHERE id_usuario = $id_usuario" );
+					$cont_linha_resolucao = mysqli_query($conectar, "SELECT count(*) as total from formula where id_usuario = $id_usuario");
+					$total_linhas = mysqli_fetch_assoc($cont_linha_resolucao);
+					//echo $total_linhas['total'];
+					if($total_linhas['total'] == 0){
+						$_SESSION['nadaArquivado'] = "Você ainda não tem nenhuma resolução salva em seu perfil. :(";
+						$perfilVazio = $_SESSION['nadaArquivado'];
+					}else{
+						$perfilVazio = "";
+					}
 				?>
+				<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
+				<h3><div class="alert alert-primary" role="alert" style="background: transparent; border: 0px;"><center><?php echo $perfilVazio;?> </center></div></h3>
 				<?php
 					$i = 1;
 				?>
@@ -87,7 +100,7 @@ $id_usuario = $_SESSION['id_user'];
 						<div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapse<?php echo $usuario['id_formula']; ?>" aria-expanded="true" aria-controls="collapseOne">
 						<h2 class="mb-0">
 							<button class="btn btn-link" type="button" >
-							#<?php echo $i; ?> - <?php echo $usuario['tipo_formula']; ?>
+							<span class="icon-down-open-big" aria-hidden="true"></span> <?php echo $i; ?> - <?php echo $usuario['tipo_formula']; ?>
 							</button>
 						</h2>
 						</div>
@@ -189,8 +202,8 @@ $id_usuario = $_SESSION['id_user'];
 											$resp_torriceli_vo  = "";
 											?></h3>
 										<?php }?>
-									<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
-									<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $resp_torriceli_vo  ?></div></h3>
+										<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
+										<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $resp_torriceli_vo  ?></div></h3>
 									<?php } ?>
 									<?php if($usuario['tipo_formula'] == 'Torricelli - a'){?>
 										<h3>V² = Vo² + 2 . a . (S - So)</h3><br/>
@@ -209,7 +222,6 @@ $id_usuario = $_SESSION['id_user'];
 										<?php $resultForm_torricelli_a = number_format($resposta_torricelli_a, 2,  ',', ''); ?>
 										<h3><?php echo "a = " .$resultForm_torricelli_a. " m/s²" ;?></h3><br/>
 									<?php } ?>
-								<?php $i++; ?>
 								<?php if($usuario['tipo_formula'] == 'Torricelli - S'){?>
 									<h3>V² = Vo² + 2 . a . (S - So)</h3><br/>
 									<h3><?php echo  $usuario['valor1']?> ² = <?php echo $usuario['valor2']?> ² +  2 . <?php echo  $usuario['valor3']?>. ( S - <?php echo  $usuario['valor4'] ?>)</h3><br/>
@@ -233,36 +245,88 @@ $id_usuario = $_SESSION['id_user'];
 										<h3><?php echo "S = " .$resultForm_torricelli_s. " m";?></h3><br/>
 								<?php } ?>
 								<?php if($usuario['tipo_formula'] == 'Torricelli - So'){?>
-								<h3>V² = Vo² + 2 . a . (S - So)</h3><br/>
-								<h3><?php echo $usuario['valor1']?>² = <?php echo $usuario['valor2']?>² + 2 . <?php echo  $usuario['valor3']?> . ( <?php echo $usuario['valor4']?> - So )</h3><br/>
-								<?php $util1_torriceli_so = $usuario['valor1'] * $usuario['valor1'];
-									$util2_torriceli_so  = $usuario['valor2'] * $usuario['valor2'] ;?>
-								<h3><?php echo $util1_torriceli_so ?> = <?php echo $util2_torriceli_so?> + 2 . <?php echo $usuario['valor3']?> . (<?php echo $usuario['valor4']?> - So )</h3><br/>
-								<?php $util3_torriceli_so  = $usuario['valor3'] * 2 ;?>
-								<h3><?php echo $util1_torriceli_so?> = <?php echo $util2_torriceli_so?>  + <?php echo $util3_torriceli_so?> . (<?php echo $usuario['valor4']?> - So )</h3><br/>
-								<?php $util4_torriceli_so  = $util3_torriceli_so  * $usuario['valor4'];
-									$util5_torriceli_so  =  $util3_torriceli_so  * -1;?>
-								<h3><?php echo $util1_torriceli_so?>  = <?php echo $util2_torriceli_so?>  + <?php echo $util4_torriceli_so?>
-								<?php if( $util5_torriceli_so  < 0){
-									echo "$util5_torriceli_so  So";
-								}elseif($util5_torriceli_so  >= 0){
-									echo " - $util5_torriceli_so  So";
-								}?></h3><br/>
-								<h3><?php echo $util1_torriceli_so?> - <?php echo $util2_torriceli_so?>  = <?php echo $util4_torriceli_so?>
-								<?php if( $util5_torriceli_so  < 0){
-									echo "". $util5_torriceli_so . " So";
-								}elseif($util5_torriceli_so  > 0){
-									$util5_torriceli_so  = $util5_torriceli_so  * -1;
-									echo " $util5_torriceli_so  So";
-								}?></h3><br/>
-								<?php $util6_torriceli_so  = $util1_torriceli_so  - $util2_torriceli_so  - $util4_torriceli_so  ;?>
-								<h3><?php echo "$util1_torriceli_so  - $util2_torriceli_so  -  $util4_torriceli_so  =  $util5_torriceli_so  So ";?></h3><br/>
-								<h3><?php echo "$util6_torriceli_so  / $util5_torriceli_so  =  So ";?></h3><br/> 
-								<?php $resposta_torriceli_so  =  $util6_torriceli_so  / $util5_torriceli_so ;?>
-								<?php $resultForm_torriceli_so  = number_format($resposta_torriceli_so , 2,  ',', ''); ?>
-								<h3><?php echo "So = " .$resultForm_torriceli_so . " m";?></h3><br/>
+										<h3>V² = Vo² + 2 . a . (S - So)</h3><br/>
+										<h3><?php echo $usuario['valor1']?>² = <?php echo $usuario['valor2']?>² + 2 . <?php echo  $usuario['valor3']?> . ( <?php echo $usuario['valor4']?> - So )</h3><br/>
+										<?php $util1_torriceli_so = $usuario['valor1'] * $usuario['valor1'];
+											$util2_torriceli_so  = $usuario['valor2'] * $usuario['valor2'] ;?>
+										<h3><?php echo $util1_torriceli_so ?> = <?php echo $util2_torriceli_so?> + 2 . <?php echo $usuario['valor3']?> . (<?php echo $usuario['valor4']?> - So )</h3><br/>
+										<?php $util3_torriceli_so  = $usuario['valor3'] * 2 ;?>
+										<h3><?php echo $util1_torriceli_so?> = <?php echo $util2_torriceli_so?>  + <?php echo $util3_torriceli_so?> . (<?php echo $usuario['valor4']?> - So )</h3><br/>
+										<?php $util4_torriceli_so  = $util3_torriceli_so  * $usuario['valor4'];
+											$util5_torriceli_so  =  $util3_torriceli_so  * -1;?>
+										<h3><?php echo $util1_torriceli_so?>  = <?php echo $util2_torriceli_so?>  + <?php echo $util4_torriceli_so?>
+										<?php if( $util5_torriceli_so  < 0){
+											echo "$util5_torriceli_so  So";
+										}elseif($util5_torriceli_so  >= 0){
+											echo " - $util5_torriceli_so  So";
+										}?></h3><br/>
+										<h3><?php echo $util1_torriceli_so?> - <?php echo $util2_torriceli_so?>  = <?php echo $util4_torriceli_so?>
+										<?php if( $util5_torriceli_so  < 0){
+											echo "". $util5_torriceli_so . " So";
+										}elseif($util5_torriceli_so  > 0){
+											$util5_torriceli_so  = $util5_torriceli_so  * -1;
+											echo " $util5_torriceli_so  So";
+										}?></h3><br/>
+										<?php $util6_torriceli_so  = $util1_torriceli_so  - $util2_torriceli_so  - $util4_torriceli_so  ;?>
+										<h3><?php echo "$util1_torriceli_so  - $util2_torriceli_so  -  $util4_torriceli_so  =  $util5_torriceli_so  So ";?></h3><br/>
+										<h3><?php echo "$util6_torriceli_so  / $util5_torriceli_so  =  So ";?></h3><br/> 
+										<?php $resposta_torriceli_so  =  $util6_torriceli_so  / $util5_torriceli_so ;?>
+										<?php $resultForm_torriceli_so  = number_format($resposta_torriceli_so , 2,  ',', ''); ?>
+										<h3><?php echo "So = " .$resultForm_torriceli_so . " m";?></h3><br/>
 							<?php } ?>
+							<?php if($usuario['tipo_formula'] == 'Campo Elétrico - E'){?>
+										<h3>E = (K . q)/ D²</h3><br/>
+										<h3>E = (<?php echo $usuario['valor1']?> . <?php echo  $usuario['valor2']?>) / <?php echo  $usuario['valor3']?>²</h3><br/>
+										<?php $util1_campo_E =  $usuario['valor3'] *  $usuario['valor3'];?>
+										<h3>E = (<?php echo $usuario['valor1']?> . <?php echo  $usuario['valor2']?>) / <?php echo  $util1_campo_E?></h3><br/>
+										<?php $util2_campo_E =  $usuario['valor1'] *  $usuario['valor2'];?>
+										<h3>E = <?php echo  $util2_campo_E ?> / <?php echo  $util1_campo_E?></h3><br/>
+										<?php
+										$resp_campo_E =  $util2_campo_E  / $util1_campo_E ;
+										$resultForm_campo_E  = number_format($resp_campo_E, 2,  ',', ''); ?>
+										<h3>E = <?php echo $resultForm_campo_E ?> N/C</h3>
+							<?php } ?>
+							<?php if($usuario['tipo_formula'] == 'Campo Elétrico - q'){?>
+										<h3>E = (K . q)/ D²</h3><br/>
+										<h3><?php echo $usuario['valor1']?> = (<?php echo $usuario['valor2']?> . q) / <?php echo  $usuario['valor3']?>²</h3><br/>
+										<?php $util1_campo_q = $usuario['valor3'] * $usuario['valor3'];?>
+										<h3><?php echo $usuario['valor1'] ?> = (<?php echo $usuario['valor2']?> . q) / <?php echo $util1_campo_q ?></h3><br/>
+										<h3><?php echo $usuario['valor1'] ?> . <?php echo $util1_campo_q ?> = <?php  echo $usuario['valor2']?> . q</h3><br/>
+										<?php $util2_campo_q = $usuario['valor1'] * $util1_campo_q ;?>
+										<h3><?php echo $util2_campo_q?> = <?php echo $usuario['valor2']?> . q</h3><br/>
+										<h3><?php echo $util2_campo_q ?> / <?php echo $usuario['valor2']?> = q</h3><br/>
+										<?php
+										 $resp_campo_q = $util2_campo_q / $usuario['valor2'];
+										 $resultForm_campo_q  = number_format($resp_campo_q, 2,  ',', ''); ?>
+										<h3>q = <?php echo $resultForm_campo_q ?> C</h3><br/>
+							<?php } ?>
+							<?php if($usuario['tipo_formula'] == 'Campo Elétrico - d'){?>
+										<h3>E = (K . q)/ D²</h3><br/>
+										<h3><?php echo $usuario['valor1'] ?> = <?php echo $usuario['valor2']?> . <?php echo $usuario['valor3']?>/ D²</h3><br/>
+										<?php $util1_campo_d = $usuario['valor2'] * $usuario['valor3'];?>
+										<h3><?php echo $usuario['valor1']?> = <?php echo $util1_campo_d ?> / D²</h3><br/>
+										<h3><?php echo $usuario['valor1'] ?> . D² = <?php echo $util1_campo_d ?></h3><br/>
+										<h3><?php echo "D² = $util1_campo_d /"?> <?php echo $usuario['valor1']?></h3><br/>
+										<?php $util2_campo_d = $util1_campo_d / $usuario['valor1'] ;?>
+										<h3><?php echo "D² = $util2_campo_d";?></h3><br/>
+										<h3><?php echo "D = √ $util2_campo_d";?></h3><br/>
+										<?php
+											if($util2_campo_d < 0){
+												$_SESSION['RespostaRaiz'] = "Obs.: não existe raiz de número negativo.";
+												$resp_campo_d = $_SESSION['RespostaRaiz'];
+											}elseif ($util2_campo_d >= 0){?>
+												<h3><?php
+												$resposta_campo_d = sqrt($util2_campo_d);
+												$resultForm_campo_d = number_format($resposta_campo_d, 2,  ',', '');
+												echo "D = " .$resultForm_campo_d. " m "; 
+												$resp_campo_d = "";
+												?></h3>
+											<?php } ?>
+										<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
+										<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $resp_campo_d ?></div></h3>
+								<?php } ?>
 							</div>
+							<?php $i++; ?>
 						</div>
 					</div>
 				</div>

@@ -40,6 +40,7 @@
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
+					  	<span class="icon-user-female" aria-hidden="true"></span>
         				<?php echo "Olá, " .$_SESSION['name_user']; ?>
       				</a>
       				<div class="dropdown-menu">

@@ -1,101 +1,117 @@
-div{
-	border-radius: 15px 15px 15px 15px;
-	background-color: #F8F8FF;
+div {
+    border-radius: 15px 15px 15px 15px;
+    background-color: #F8F8FF;
 }
+
 body {
-	
-	margin: 0;
-	padding: 0;
-	font-family: Bradley Hand, cursive;
-	/*background-image: url('../img/fundo_alta_qualidade2.jpg');*/
-	background-color: #68838B;
-}
-nav{
-	font-size: 16pt;
-}
-p{
-	font-family: Bradley Hand, cursive;
-	text-shadow: 3px 3px 5px #A4A4A4;
-	text-align: justify;
-}
-h2{
-	
-	box-shadow: 15px 10px 10px grey;
-	text-shadow: 3px 3px 5px #A4A4A4;
-	border-radius: 15px 15px 15px 15px;
-	border: 1px solid grey;
-	text-align: center;
-	font-family: Bradley Hand, cursive;
-	background-color: #9BCD9B;
-}
-h3{
-	font-size: 40pt;
-	font-family: Bradley Hand, cursive;
-}
-h4{
-	font-family: Bradley Hand, cursive;
-}
-p{
-	font-size: 12pt;
-	font-family: Bradley Hand, cursive;
-}
-#icone{
-	border-radius: 15px 15px 15px 15px;
-	border: 1px solid gray;
-}
-input{
-	width: 50px;
-	padding: 10px;
-	border-radius: 3px;
-	border: 1px #363636;
-}
-a{
-	border-radius: 15px 15px 15px 15px;
-}
-#grandeza:hover{
-	font-size: 35pt;
-	background-color: #00FF7F;
-	text-shadow: 2px 2px 5px gray;
-	border: 1px black;
-	padding: 3px;
-	margin: 3px;
+    margin: 0;
+    padding: 0;
+    font-family: Bradley Hand, cursive;
+    /*background-image: url('../img/fundo_alta_qualidade2.jpg');*/
+    background-color: #68838B;
 }
 
-#lembrete{
-	border: 1px black;
-	padding: 3px;
-	margin: 3px;
+nav {
+    font-size: 16pt;
 }
 
-
-#formula:hover{
-	background-color:#9BCD9B;
-	width: 260px;
-	height: 70px;
-	border: 1px gray solid;
-	border-radius: 8px 8px 8px 8px;
-}
-#nomeusuario{
-	text-align: right;
-}
-input{
-	width: 100px;
-	padding: 10px;
-	border-radius: 3px;
-	border: 1px solid;
-}
-#menu{
-	color: black;
-	background-color: #6E7B8B;
-	opacity: 0.8;
-	text-transform: uppercase;
-	font-size: 16pt
-}
-li:hover{
-	box-shadow: 0px 0px 0px #F8F8FF;
-	background-color: #696969;
-	color: white;
-	text-shadow: 2px 2px 5px white;
-	border-radius: 10px 10px 10px 10px;
+p {
+    font-family: Bradley Hand, cursive;
+    text-shadow: 3px 3px 5px #A4A4A4;
+    text-align: justify;
 }
 
+h2 {
+    box-shadow: 15px 10px 10px grey;
+    text-shadow: 3px 3px 5px #A4A4A4;
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid grey;
+    text-align: center;
+    font-family: Bradley Hand, cursive;
+    background-color: #9BCD9B;
+}
+
+h3 {
+    font-size: 40pt;
+    font-family: Bradley Hand, cursive;
+}
+
+h4 {
+    font-family: Bradley Hand, cursive;
+}
+
+p {
+    font-size: 12pt;
+    font-family: Bradley Hand, cursive;
+}
+
+#icone {
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid gray;
+}
+
+input {
+    width: 50px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px #363636;
+}
+
+a {
+    border-radius: 15px 15px 15px 15px;
+}
+
+#grandeza:hover {
+    font-size: 35pt;
+    background-color: #00FF7F;
+    text-shadow: 2px 2px 5px gray;
+    border: 1px black;
+    padding: 3px;
+    margin: 3px;
+}
+
+#lembrete {
+    border: 1px black;
+    padding: 3px;
+    margin: 3px;
+}
+
+#formula:hover {
+    background-color: #9BCD9B;
+    width: 260px;
+    height: 70px;
+    border: 1px gray solid;
+    border-radius: 8px 8px 8px 8px;
+}
+
+#nomeusuario {
+    text-align: right;
+}
+
+input {
+    width: 100px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid;
+}
+
+#menu {
+    color: black;
+    background-color: #6E7B8B;
+    opacity: 0.8;
+    text-transform: uppercase;
+    font-size: 16pt
+}
+
+li:hover {
+    box-shadow: 0px 0px 0px #F8F8FF;
+    background-color: #696969;
+    color: white;
+    text-shadow: 2px 2px 5px white;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16pt;
+}
