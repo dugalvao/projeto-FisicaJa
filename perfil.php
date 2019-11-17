@@ -325,6 +325,104 @@ $id_usuario = $_SESSION['id_user'];
 										<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
 										<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $resp_campo_d ?></div></h3>
 								<?php } ?>
+								<?php if($usuario['tipo_formula'] == 'Calor Específico - c'){?>
+									<h3>c = Q / [m . ( t - to )]</h3><br/>
+									<h3> c = <?php echo $usuario['valor1']?> / [<?php echo $usuario['valor2']?> . (<?php echo $usuario['valor3']?> - <?php echo $usuario['valor4']?>)]</h3><br/>
+									<?php $util1_calor_c = $usuario['valor3'] - $usuario['valor4'];?>
+									<h3>c = <?php echo $usuario['valor1'] ?> / <?php echo $usuario['valor2'] ?> . <?php echo $util1_calor_c ?></h3><br/>
+									<?php $util2_calor_c = $usuario['valor2']  * $util1_calor_c ?>
+									<h3>c = <?php echo  $usuario['valor1']?> / <?php echo $util2_calor_c ?></h3><br/>
+									<?php
+										if($util2_calor_c == 0){
+											$result_calor_c = 0;
+										}else{
+											$result_calor_c =  $usuario['valor1'] / $util2_calor_c;
+										}
+										if($result_calor_c < 0){
+											$_SESSION['RespostaNegativaCalor'] = "Obs.: não existe calor específico menor que zero.";
+											$resp_calor_c = $_SESSION['RespostaNegativaCalor'];
+										}else{?>
+											<h3><?php
+											$resultForm_calor_c = number_format($result_calor_c, 2,  ',', '');
+											echo "c = " .$resultForm_calor_c. "cal/g.°C "; 
+											$resp_calor_c = "";
+											?></h3>
+										<?php } ?>
+											<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
+											<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $resp_calor_c ?></div></h3>
+								<?php } ?>
+								<?php if($usuario['tipo_formula'] == 'Calor Específico - Q'){?>
+									<h3>c = Q / [m . ( t - to )]</h3><br/>
+									<h3><?php echo $usuario['valor1'] ?> = Q / [<?php echo $usuario['valor2']?> . ( <?php echo $usuario['valor3']?> - <?php echo $usuario['valor4']?>)]</h3><br/>
+									<?php $util1_calor_q = $usuario['valor3'] - $usuario['valor4']  ?>
+									<h3><?php echo $usuario['valor1']?> = Q / <?php echo $usuario['valor2']?> . <?php echo $util1_calor_q ?></h3><br/>
+									<?php $util2_calor_q  = $usuario['valor2'] * $util1_calor_q?>
+									<h3><?php echo $usuario['valor1']?> = Q / <?php echo $util2_calor_q?></h3><br/>
+									<h3><?php echo $usuario['valor1']?> . <?php echo $util2_calor_q?> = Q </h3><br/>
+									<?php $result_calor_q =  $usuario['valor1'] * $util2_calor_q?>
+									<?php $resultForm_calor_q = number_format($result_calor_q, 2,  ',', '')?>
+									<h3> Q = <?php echo $resultForm_calor_q?> cal</h3><br/>
+								<?php } ?>
+								<?php if($usuario['tipo_formula'] == 'Calor Específico - m'){?>
+									<h3>c = Q / [m . ( t - to )]</h3><br/>
+									<h3><?php echo $usuario['valor1']?> = <?php echo $usuario['valor2']?> / m . (<?php echo $usuario['valor3']?> - <?php echo $usuario['valor4']?> )</h3><br/>
+									<?php $util1_calor_m = $usuario['valor3'] - $usuario['valor4'] ;?>
+									<h3><?php echo $usuario['valor1']?> = <?php echo $usuario['valor2'] ?> /  m . <?php echo $util1_calor_m?></h3><br/>
+									<h3><?php echo $usuario['valor1'] ?> . (<?php echo $util1_calor_m ?> . m ) = <?php echo $usuario['valor2'] ?></h3><br/>
+									<h3><?php echo $util1_calor_m ?> . m = <?php echo $usuario['valor2']?> / <?php echo $usuario['valor1'] ?></h3><br/>
+									<?php $util2_calor_m = $usuario['valor2'] / $usuario['valor1'];?>
+									<h3><?php echo "$util1_calor_m . m = $util2_calor_m";?></h3><br/>
+									<h3><?php echo "m = $util2_calor_m / $util1_calor_m";?></h3><br/>
+									<?php
+										if($util1_calor_m == 0){
+											$result_calor_m = 0;
+										}else{
+											$result_calor_m =  $util2_calor_m / $util1_calor_m;
+										}
+										if($result_calor_m < 0){
+											$_SESSION['RespostaNegativaMassa'] = "Obs.: não existe massa menor que zero.";
+											$resp_calor_m = $_SESSION['RespostaNegativaMassa'];
+										}else{?>
+											<h3><?php
+											$resultForm_calor_m = number_format($result_calor_m, 2,  ',', '');
+											echo "m = " .$resultForm_calor_m. "g (ou Kg)"; 
+											$resp_calor_m = "";
+											?></h3>
+										<?php } ?>
+									<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
+									<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $resp_calor_m ?></div></h3>
+								<?php } ?>
+								<?php if($usuario['tipo_formula'] == 'Calor Específico - t'){?>
+									<h3>c = Q / [m . ( t - to )]</h3><br/>
+									<h3><?php echo $usuario['valor1'] ?> = <?php echo $usuario['valor2']?> / <?php echo $usuario['valor3']?> . ( t - <?php echo $usuario['valor4']?>)</h3><br/>
+									<h3><?php echo $usuario['valor1']?> . <?php echo $usuario['valor3']?> . ( t - <?php echo $usuario['valor4']?> ) = <?php echo $usuario['valor2'] ?></h3><br/>
+									<?php $util1_calor_t = $usuario['valor1'] * $usuario['valor3'];?>
+									<h3><?php echo $util1_calor_t?> . ( t - <?php echo $usuario['valor4'] ?> ) = <?php echo $usuario['valor2'] ?></h3><br/>
+									<h3> t - <?php echo $usuario['valor4'] ?> = <?php echo $usuario['valor2']?> / <?php echo $util1_calor_t?></h3><br/>
+									<?php $util2_calor_t = $usuario['valor2']/ $util1_calor_t;
+									$resultForm1_calor_t = number_format($util2_calor_t, 2,  ',', '');?>
+									<h3>t - <?php echo $usuario['valor4']?> = <?php echo $resultForm1_calor_t ?></h3><br/>
+									<h3>t = <?php echo $resultForm1_calor_t?> +  <?php echo $usuario['valor4']?></h3><br/>
+									<?php $util3_calor_t = $util2_calor_t + $usuario['valor4'];
+									$resultForm2_calor_t = number_format($util3_calor_t, 2,  ',', '');?>
+									<h3><?php echo "t = $resultForm2_calor_t °C";?></h3><br/>
+								<?php } ?>
+								<?php if($usuario['tipo_formula'] == 'Calor Específico - to'){?>
+									<h3>c = Q / [m . ( t - to )]</h3><br/>
+									<h3><?php echo $usuario['valor1']?> = <?php echo $usuario['valor2'] ?> / <?php echo $usuario['valor3']?> . ( <?php echo $usuario['valor4']?> - to )</h3><br/>
+									<h3><?php echo $usuario['valor1']?> . <?php echo $usuario['valor3'] ?> . ( <?php echo $usuario['valor4']?> - to ) = <?php echo $usuario['valor2']?></h3><br/>
+									<?php $util1_calor_to = $usuario['valor1']* $usuario['valor3'];?>
+									<h3><?php echo $util1_calor_to ?> . ( <?php echo $usuario['valor4'] ?> - to ) = <?php echo $usuario['valor2']?></h3><br/>
+									<h3><?php echo $usuario['valor4']?> - to = <?php $usuario['valor2'] ?> / <?php echo $util1_calor_to ?></h3><br/>
+									<?php $util2_calor_to = $usuario['valor2']/ $util1_calor_to;
+									$resultForm1_calor_to = number_format($util2_calor_to, 2,  ',', '');?>
+									<h3><?php echo $usuario['valor4']?> - to = <?php echo $resultForm1_calor_to?></h3><br/>
+									<h3><?php echo $usuario['valor4'] ?> = <?php echo $resultForm1_calor_to?> + to</h3><br/>
+									<h3><?php echo $usuario['valor4']?> - <?php echo $resultForm1_calor_to ?> = to</h3><br/>
+									<?php $util3_calor_to = $usuario['valor4'] - $util2_calor_to;?>
+									<?php $resultForm2_calor_to = number_format($util3_calor_to, 2,  ',', '');?>
+									<h3><?php echo "to = $resultForm2_calor_to °C";?></h3><br/>
+								<?php } ?>
 							</div>
 							<?php $i++; ?>
 						</div>

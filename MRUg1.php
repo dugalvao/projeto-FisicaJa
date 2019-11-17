@@ -6,7 +6,7 @@
 	$valor2 = $_GET['valor2'];
 	$valor3 = $_GET['valor3'];
 	$resultado = $valor1 + ($valor2 * $valor3);
-	
+	//$resultForm = number_format();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -111,6 +111,5 @@
 				})
 
 			}
-		
 	</script>
 </html>

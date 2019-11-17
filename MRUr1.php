@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/form.css">
 		<link rel="stylesheet" href="css/fontello.css">
-		
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="jquery/dist/jquery.js"></script>
@@ -68,6 +68,7 @@
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
+					  	<span class="icon-user-female" aria-hidden="true"></span>
         				<?php echo "Olá, " .$_SESSION['name_user'];?>
       				</a>
       				<div class="dropdown-menu">

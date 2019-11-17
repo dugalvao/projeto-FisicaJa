@@ -85,6 +85,7 @@
 					$resp = "";
 					?></h3>
 				<?php } ?>
+		
 			<!-- a linha abaixo, printa a observação usando a resposta do if-else a em cima-->
 			<h3><div class="alert alert-warning" role="alert" style="background: transparent; border: 0px;"><?php echo $resp ?></div></h3>
 		</div>

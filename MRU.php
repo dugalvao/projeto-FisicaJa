@@ -10,7 +10,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
-       
 		<link rel="stylesheet" href="css/estilo.css">
 		<link rel="stylesheet" href="css/fontello.css">
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

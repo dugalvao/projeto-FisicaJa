@@ -81,7 +81,7 @@
 			<h1 class="p-3">E = (K . q)/ D²</h1>
 			</center>
 			<div class="container-fluid">
-				<a href="CampEletr.php" class="btn btn-lg btn-block w-100 " id="vermais">
+				<a href="CampoEletrico.php" class="btn btn-lg btn-block w-100 " id="vermais">
 					Ver mais
 				</a>	
 			</div>

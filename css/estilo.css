@@ -63,7 +63,34 @@ button {
     background-color: #284254;
 }
 
+#topicos {
+    /* text-shadow: 3px 3px 5px #A4A4A4; */
+    /* border-radius: 2.1em; */
+    /* border: 1px solid grey; */
+    text-align: justify;
+    font-family: Bradley Hand, cursive;
+    background: #7b95ad30;
+    border: thin #b9c9d4 solid;
+}
+
+#h2formulas-index {
+    border-radius: 2.1em;
+    color: #d7d7ea;
+    /* text-shadow: 3px 3px 5px #A4A4A4; */
+    /* border-radius: 2.1em; */
+    border: 1px solid grey;
+    text-align: center;
+    font-family: Bradley Hand, cursive;
+    background-color: #284254;
+}
+
 #divs {
+    background-color: #d7d7ea;
+}
+
+#divs-index {
+    border: none;
+    border-radius: 40px 10px;
     background-color: #d7d7ea;
 }
 
@@ -196,6 +223,13 @@ footer {
     text-align: justify;
 }
 
+#text-conteudo-criador1 {
+    text-align: justify;
+    margin: 20px;
+    color: #acbfcc;
+    font-size: 14pt;
+}
+
 .btn-outline-secondary {
     color: #374858;
     background-color: transparent;
@@ -242,6 +276,15 @@ footer {
     border-radius: 1.1em;
 }
 
+#img-thumbnail {
+    padding: 0.25rem;
+    background-color: #284254;
+    border: 1px solid #284254;
+    border-radius: 0.25rem;
+    max-width: 120%;
+    height: auto;
+}
+
 #btnlogin,
 #btncadastro {
     width: 450px;
@@ -249,4 +292,51 @@ footer {
 
 h1 {
     text-shadow: 2px 5px 5px grey;
+}
+
+
+/*.corpo {
+    margin: auto;
+    width: 1000px;
+}
+
+.imagem {
+    display: table-cell;
+    float: left;
+}
+
+.texto {
+    display: table-cell;
+    float: left;
+    text-align: center;
+    width: 320px;
+}
+
+.imagem2 {
+    display: table-cell;
+    float: right;
+    margin: auto;
+}
+
+.texto2 {
+    display: table-cell;
+    float: right;
+    width: 320px;
+}
+
+.conteudo {
+    display: table;
+} */
+
+figure {
+    width: 50%;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+    text-indent: 0;
+    border: thin #b9c9d4 solid;
+    margin: 0.5em;
+    padding: 0.5em;
+    background: #7b95ad30;
+    font-size: large;
 }
