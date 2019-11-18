@@ -86,13 +86,25 @@
 				</a>	
 			</div>
 		</div><br/>
+		
+		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
+		<h2 class="p-3" id="h2formulas">Calorimetria - calor específico</h2>
+			<center>
+			<h1 class="p-3">c = Q / (m . ((t - to))</h1>
+			</center>
+			<div class="container-fluid">
+				<a href="CalorEsp.php" class="btn btn-lg btn-block w-100 "  id="vermais"> 
+					Ver mais
+				</a>
+			</div>
+		</div><br/>
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10  p-3 mt-3" id="divs">
 		<h2 class="p-3" id="h2formulas" >Movimento Retilíneo Uniformemente Variado (M.R.U.V.) - Aceleração Constante</h2>
 			<center>
 			<h1 class="p-3"> S = So + Vo . t + 1/2 . a . t² </h1>
 			</center>
 			<div class="container-fluid">
-				<a href="MRUV.php" class="btn btn-lg btn-block w-100 "  id="vermais">
+				<a href="#" class="btn btn-lg btn-block w-100 "  id="vermais">
 					Ver mais
 				</a>
 			</div>	
@@ -103,7 +115,7 @@
 			<h1 class="p-3">V = Vo + a . t</h1>
 			</center>
 			<div class="container-fluid">
-				<a href="EHV.php" class="btn btn-lg btn-block w-100 " id="vermais">
+				<a href="#" class="btn btn-lg btn-block w-100 " id="vermais">
 					Ver mais
 				</a>
 			</div>
@@ -117,21 +129,9 @@
 			<h1 class="p-3">Tk= Tc + 273,15</h1>
 			</center>
 			<div class="container-fluid">
-				<a href="EscTerm.php" class="btn btn-lg btn-block w-100 "  id="vermais">
+				<a href="#" class="btn btn-lg btn-block w-100 "  id="vermais">
 					Ver mais
 				</a>	
-			</div>
-		</div><br/>
-       
-		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
-		<h2 class="p-3" id="h2formulas">Calorimetria - calor específico</h2>
-			<center>
-			<h1 class="p-3">c = Q / (m . ((t - to))</h1>
-			</center>
-			<div class="container-fluid">
-				<a href="CalorEsp.php" class="btn btn-lg btn-block w-100 "  id="vermais"> 
-					Ver mais
-				</a>
 			</div>
 		</div><br/>
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">

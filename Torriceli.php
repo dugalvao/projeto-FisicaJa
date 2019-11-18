@@ -38,6 +38,7 @@
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
+					  <span class="icon-user-female" aria-hidden="true"></span>
         				<?php
 							echo "Olá, " .$_SESSION['name_user'];
 						?>
@@ -66,17 +67,17 @@
 					</h4>
 				</center>
 				
-			</div>
+			</div><br/>
 			<div class="container col-12 col-sm-12 col-md-10 col-xl-10">
-				<img src="img/gifAlbert.gif" alt="Gif" height="145" width="75" align="left">
+				<!--<img src="img/gifAlbert.gif" alt="Gif" height="145" width="75" align="left">-->
 				<h4> <strong> Não se esqueça, para V²=Vo²+2.a.(S - So) temos:</strong><br/>
-					<strong>V </strong><img src="img/seta.jpg" alt="Seta verde" height="15" width="25"> metros por segundo (m/s) <br/>
-					<strong>Vo </strong><img src="img/seta.jpg" alt="Seta verde" height="15" width="25"> metros por segundo (m/s) <br/>
-					<strong>a </strong><img src="img/seta.jpg" alt="Seta verde" height="15" width="25"> metros por segundo ao quadrado (m/s²)<br/>
-					<strong>S </strong> <img src="img/seta.jpg" alt="Seta verde" height="15" width="25"> metros (m)<br/>
-					<strong>So </strong> <img src="img/seta.jpg" alt="Seta verde" height="15" width="25"> metros (m)<br/>
+					<strong>V </strong> <span class="icon-right" aria-hidden="true"></span>metros por segundo (m/s) <br/>
+					<strong>Vo </strong><span class="icon-right" aria-hidden="true"></span> metros por segundo (m/s) <br/>
+					<strong>a </strong> <span class="icon-right" aria-hidden="true"></span>metros por segundo ao quadrado (m/s²)<br/>
+					<strong>S </strong><span class="icon-right" aria-hidden="true"></span> metros (m)<br/>
+					<strong>So </strong><span class="icon-right" aria-hidden="true"></span> metros (m)<br/>
 				</h4><br/>
-				<h4>
+				<h4 id="text-conteudo">
 				Qualquer problema do MUV pode ser resolvido com as equações horárias da posição e da velocidade.
 				No entanto, há problemas que podem ser resolvidos mais rapidamente usando uma outra equação, que
 				relaciona a velocidade escalar com o espaço, sem envolver o tempo. Essa equação pode ser obtida 

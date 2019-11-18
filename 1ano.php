@@ -65,7 +65,7 @@ session_start();
 			</div>
 		</div>
 		<div class="container col-12 col-sm-12 col-md-10 col-xl-10 p-3 mt-3" id="divs">
-		<h2 class="p-3" id="h2formulas">Equação de Torriceli</h2>
+		<h2 class="p-3" id="h2formulas">Equação de Torricelli</h2>
 			<center>
 			<h1 class="p-3">V² = Vo² + 2 . a . (So - S)</h1>
 			</center>

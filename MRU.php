@@ -80,7 +80,7 @@
 					uniforme, a velocidade instantânea coincide com a velocidade média num intervalo de tempo qualquer.
 					Assim, obtemos a equação horária dos espaços (ou abscissas) para o MRU. Ela nos fornece o espaço S 
 					num instante qualquer t.<br/><br/>
-					<center><img src="img/mru.gif" alt="Gif" height="200" width="400" class="img-thumbnail"></center><br/><br/><br/><br/>
+					<!--<center><img src="img/mru.gif" alt="Gif" height="200" width="400" class="img-thumbnail"></center><br/><br/><br/><br/>-->
 				</h4><br/>
 				Fonte: SAMPAIO, J. L.; CALÇADA, C. S. Física. Volume único. 2ª edição. São Paulo: Atual, 2005.
 				

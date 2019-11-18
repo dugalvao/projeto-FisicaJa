@@ -91,9 +91,5 @@
 				Ver mais
 			</a>	
 		</div><br/>
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        
-        
     </body>
 </html>

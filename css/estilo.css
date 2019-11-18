@@ -13,7 +13,7 @@ body {
 form {
     border-radius: 2.1em;
     font-size: 16px;
-    background-color: #acbfcc;
+    background-color: #b9c9d4;
     max-width: 500px;
     margin: 0 auto;
     padding: 0px 10px 10px 10px;
@@ -90,7 +90,6 @@ button {
 
 #divs-index {
     border: none;
-    border-radius: 40px 10px;
     background-color: #d7d7ea;
 }
 
@@ -288,6 +287,7 @@ footer {
 #btnlogin,
 #btncadastro {
     width: 450px;
+    height: 40px;
 }
 
 h1 {

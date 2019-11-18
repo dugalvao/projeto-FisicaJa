@@ -52,6 +52,7 @@
     			</li>
 				<li class="nav-item dropdown" id="nomeusuario">
       				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown" >
+					  <span class="icon-user-female" aria-hidden="true"></span>
         				<?php echo "Olá, " .$_SESSION['name_user'];?>
       				</a>
       				<div class="dropdown-menu">
@@ -75,7 +76,12 @@
 			<?php $util5 = $util1 - $util2 ;?>
 			<h3><?php echo "$util5 =   $util4 a ";?></h3><br/>
 			<h3><?php echo "$util5 / $util4  = a";?></h3><br/>
-			<?php $resposta = $util5 / $util4; ?>
+			<?php 
+				if ($util5 == 0 || $util4 == 0 ){ 
+					$resposta = 0;
+				}else{
+					$resposta = $util5 / $util4;
+				}?>
 			<?php $resultForm = number_format($resposta, 2,  ',', ''); ?>
 			<h3><?php echo "a = " .$resultForm. " m/s²" ;?></h3><br/>
 		</div>

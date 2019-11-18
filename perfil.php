@@ -218,7 +218,12 @@ $id_usuario = $_SESSION['id_user'];
 										<?php $util5_torricelli_a = $util1_torricelli_a - $util2_torricelli_a;?>
 										<h3><?php echo "$util5_torricelli_a =   $util4_torricelli_a a ";?></h3><br/>
 										<h3><?php echo "$util5_torricelli_a / $util4_torricelli_a  = a";?></h3><br/>
-										<?php $resposta_torricelli_a = $util5_torricelli_a / $util4_torricelli_a; ?>
+										<?php 
+											if ($util5_torricelli_a == 0 || $util4_torricelli_a== 0 ){ 
+												$resposta_torricelli_a = 0;
+											}else{
+												$resposta_torricelli_a = $util5_torricelli_a / $util4_torricelli_a;
+										}?>
 										<?php $resultForm_torricelli_a = number_format($resposta_torricelli_a, 2,  ',', ''); ?>
 										<h3><?php echo "a = " .$resultForm_torricelli_a. " m/s²" ;?></h3><br/>
 									<?php } ?>
